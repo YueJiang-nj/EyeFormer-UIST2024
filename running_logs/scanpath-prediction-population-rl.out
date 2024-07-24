@@ -1,0 +1,782 @@
+-------------------------------------------------------------------------------
+There are messages associated with the following module(s):
+-------------------------------------------------------------------------------
+
+anaconda3/latest:
+   This is an old and deprecated installation of anaconda. Please switch to
+   module "anaconda" instead, if possible. To ignore this message, use
+   'module -q load ...' when loading the module.
+
+-------------------------------------------------------------------------------
+
+| distributed init (rank 0): env://
+Creating dataset
+Creating model
+Model will generate 16 points
+reshape position embedding from 196 to 256
+_IncompatibleKeys(missing_keys=[], unexpected_keys=['head.weight', 'head.bias'])
+load checkpoint from output/scanpath_prediction_population_pretrain/checkpoint_29.pth
+<All keys matched successfully>
+Start training
+/home/guoz3/.conda/envs/eye_tracking/lib/python3.6/site-packages/torch/nn/functional.py:1639: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+Train Epoch: [0]  [ 0/29]  eta: 0:10:03  lr: 0.000010  loss_rl: 0.0907  rewards: -0.0952  time: 20.8181  data: 7.6169  max mem: 19996
+Train Epoch: [0]  [ 5/29]  eta: 0:04:50  lr: 0.000010  loss_rl: 0.1702  rewards: -0.1774  time: 12.0937  data: 1.2696  max mem: 21320
+Train Epoch: [0]  [10/29]  eta: 0:03:38  lr: 0.000010  loss_rl: 0.1136  rewards: -0.1297  time: 11.5167  data: 0.6926  max mem: 21320
+Train Epoch: [0]  [15/29]  eta: 0:02:36  lr: 0.000010  loss_rl: 0.0421  rewards: -0.0527  time: 11.2079  data: 0.4763  max mem: 21320
+Train Epoch: [0]  [20/29]  eta: 0:01:38  lr: 0.000010  loss_rl: 0.1221  rewards: -0.1389  time: 10.4016  data: 0.0002  max mem: 21320
+Train Epoch: [0]  [25/29]  eta: 0:00:42  lr: 0.000010  loss_rl: 0.1963  rewards: -0.1989  time: 10.1136  data: 0.0002  max mem: 21320
+Train Epoch: [0]  [28/29]  eta: 0:00:10  lr: 0.000010  loss_rl: 0.1476  rewards: -0.1617  time: 9.9550  data: 0.0002  max mem: 21320
+Train Epoch: [0] Total time: 0:05:02 (10.4258 s / it)
+Averaged stats: lr: 0.0000  loss_rl: 0.1258  rewards: -0.1388
+Testing:  [ 0/24]  eta: 0:00:45    time: 1.9146  data: 1.3827  max mem: 21320
+Testing:  [ 1/24]  eta: 0:00:26    time: 1.1519  data: 0.6914  max mem: 21320
+Testing:  [ 2/24]  eta: 0:00:18    time: 0.8594  data: 0.4610  max mem: 21320
+Testing:  [ 3/24]  eta: 0:00:14    time: 0.7134  data: 0.3457  max mem: 21320
+Testing:  [ 4/24]  eta: 0:00:12    time: 0.6260  data: 0.2766  max mem: 21320
+Testing:  [ 5/24]  eta: 0:00:10    time: 0.5679  data: 0.2305  max mem: 21320
+Testing:  [ 6/24]  eta: 0:00:09    time: 0.5259  data: 0.1976  max mem: 21320
+Testing:  [ 7/24]  eta: 0:00:08    time: 0.4952  data: 0.1729  max mem: 21320
+Testing:  [ 8/24]  eta: 0:00:08    time: 0.5190  data: 0.2021  max mem: 21320
+Testing:  [ 9/24]  eta: 0:00:07    time: 0.4946  data: 0.1819  max mem: 21320
+Testing:  [10/24]  eta: 0:00:06    time: 0.4746  data: 0.1654  max mem: 21320
+Testing:  [11/24]  eta: 0:00:05    time: 0.4583  data: 0.1516  max mem: 21320
+Testing:  [12/24]  eta: 0:00:05    time: 0.4601  data: 0.1484  max mem: 21320
+Testing:  [13/24]  eta: 0:00:05    time: 0.4630  data: 0.1527  max mem: 21320
+Testing:  [14/24]  eta: 0:00:04    time: 0.4520  data: 0.1429  max mem: 21320
+Testing:  [15/24]  eta: 0:00:03    time: 0.4411  data: 0.1340  max mem: 21320
+Testing:  [16/24]  eta: 0:00:03    time: 0.4326  data: 0.1261  max mem: 21320
+Testing:  [17/24]  eta: 0:00:02    time: 0.4244  data: 0.1191  max mem: 21320
+Testing:  [18/24]  eta: 0:00:02    time: 0.4164  data: 0.1128  max mem: 21320
+Testing:  [19/24]  eta: 0:00:02    time: 0.4094  data: 0.1072  max mem: 21320
+Testing:  [20/24]  eta: 0:00:01    time: 0.3276  data: 0.0380  max mem: 21320
+Testing:  [21/24]  eta: 0:00:01    time: 0.3220  data: 0.0380  max mem: 21320
+Testing:  [22/24]  eta: 0:00:00    time: 0.3223  data: 0.0380  max mem: 21320
+Testing:  [23/24]  eta: 0:00:00    time: 0.3157  data: 0.0380  max mem: 21320
+Testing: Total time: 0:00:09 (0.3875 s / it)
+CompletedProcess(args=['python', 'evaluation/eval_xy.py', '--scanpaths', '--ref_files', 'evaluation/testing_ground_truth.csv', '--pred_files', 'output/scanpath_prediction_population_rl/predicted_result.csv'], returncode=0, stdout='        DTW : (4.454056835211021, 1.2844852385220933)\n        TDE : (0.12781676648097362, 0.03043054641418538)\n eyenalysis : (0.03921840406286365, 0.021141205656605683)\n    frechet : (0.49215378112996394, 0.1372241250772651)\n  euclidean : (nan, nan)\n  hausdorff : (0.33109739213990774, 0.10063463979794088)\n recurrence : (2.0004291802656926, 2.0901601294256493)\ndeterminism : (3.2205028970826652, 13.920909092314858)\n laminarity : (0.0, 0.0)\n       CORM : (26.502201064187126, 24.15955455603463)\nlevenshtein : (5.7111716621253406, 4.416153219025678)\n     mannan : (0.03639389769717342, 0.05531389992334676)\n', stderr='')
+Testing,   DTW: 4.4541,   TDE: 0.1278,   Eye: 0.0392
+/home/guoz3/.conda/envs/eye_tracking/lib/python3.6/site-packages/torch/nn/functional.py:1639: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+Train Epoch: [1]  [ 0/29]  eta: 0:09:26  lr: 0.000010  loss_rl: 0.1411  rewards: -0.1412  time: 19.5304  data: 4.3108  max mem: 21320
+Train Epoch: [1]  [ 5/29]  eta: 0:05:12  lr: 0.000010  loss_rl: 0.1337  rewards: -0.1425  time: 13.0342  data: 0.7186  max mem: 21320
+Train Epoch: [1]  [10/29]  eta: 0:03:48  lr: 0.000010  loss_rl: 0.0806  rewards: -0.0829  time: 12.0105  data: 0.3921  max mem: 21320
+Train Epoch: [1]  [15/29]  eta: 0:02:42  lr: 0.000010  loss_rl: 0.1597  rewards: -0.1520  time: 11.6405  data: 0.2696  max mem: 21320
+Train Epoch: [1]  [20/29]  eta: 0:01:43  lr: 0.000010  loss_rl: 0.1461  rewards: -0.1442  time: 11.0993  data: 0.0002  max mem: 21320
+Train Epoch: [1]  [25/29]  eta: 0:00:44  lr: 0.000010  loss_rl: 0.1030  rewards: -0.0921  time: 10.4551  data: 0.0002  max mem: 21320
+Train Epoch: [1]  [28/29]  eta: 0:00:10  lr: 0.000010  loss_rl: 0.1195  rewards: -0.1232  time: 10.1740  data: 0.0002  max mem: 21320
+Train Epoch: [1] Total time: 0:05:15 (10.8635 s / it)
+Averaged stats: lr: 0.0000  loss_rl: 0.1117  rewards: -0.1183
+Testing:  [ 0/24]  eta: 0:00:42    time: 1.7625  data: 1.3661  max mem: 21320
+Testing:  [ 1/24]  eta: 0:00:24    time: 1.0812  data: 0.6831  max mem: 21320
+Testing:  [ 2/24]  eta: 0:00:18    time: 0.8209  data: 0.4554  max mem: 21320
+Testing:  [ 3/24]  eta: 0:00:14    time: 0.6877  data: 0.3416  max mem: 21320
+Testing:  [ 4/24]  eta: 0:00:13    time: 0.6733  data: 0.3182  max mem: 21320
+Testing:  [ 5/24]  eta: 0:00:11    time: 0.6258  data: 0.2660  max mem: 21320
+Testing:  [ 6/24]  eta: 0:00:10    time: 0.5758  data: 0.2280  max mem: 21320
+Testing:  [ 7/24]  eta: 0:00:09    time: 0.5434  data: 0.1995  max mem: 21320
+Testing:  [ 8/24]  eta: 0:00:08    time: 0.5135  data: 0.1774  max mem: 21320
+Testing:  [ 9/24]  eta: 0:00:07    time: 0.4897  data: 0.1596  max mem: 21320
+Testing:  [10/24]  eta: 0:00:06    time: 0.4703  data: 0.1451  max mem: 21320
+Testing:  [11/24]  eta: 0:00:05    time: 0.4540  data: 0.1330  max mem: 21320
+Testing:  [12/24]  eta: 0:00:05    time: 0.4404  data: 0.1228  max mem: 21320
+Testing:  [13/24]  eta: 0:00:04    time: 0.4288  data: 0.1141  max mem: 21320
+Testing:  [14/24]  eta: 0:00:04    time: 0.4268  data: 0.1065  max mem: 21320
+Testing:  [15/24]  eta: 0:00:03    time: 0.4179  data: 0.0998  max mem: 21320
+Testing:  [16/24]  eta: 0:00:03    time: 0.4098  data: 0.0939  max mem: 21320
+Testing:  [17/24]  eta: 0:00:02    time: 0.4028  data: 0.0887  max mem: 21320
+Testing:  [18/24]  eta: 0:00:02    time: 0.3961  data: 0.0841  max mem: 21320
+Testing:  [19/24]  eta: 0:00:01    time: 0.3921  data: 0.0819  max mem: 21320
+Testing:  [20/24]  eta: 0:00:01    time: 0.3178  data: 0.0136  max mem: 21320
+Testing:  [21/24]  eta: 0:00:01    time: 0.3116  data: 0.0136  max mem: 21320
+Testing:  [22/24]  eta: 0:00:00    time: 0.3103  data: 0.0136  max mem: 21320
+Testing:  [23/24]  eta: 0:00:00    time: 0.3012  data: 0.0136  max mem: 21320
+Testing: Total time: 0:00:08 (0.3711 s / it)
+CompletedProcess(args=['python', 'evaluation/eval_xy.py', '--scanpaths', '--ref_files', 'evaluation/testing_ground_truth.csv', '--pred_files', 'output/scanpath_prediction_population_rl/predicted_result.csv'], returncode=0, stdout='        DTW : (4.272552556904145, 1.2124306549084458)\n        TDE : (0.128510155615033, 0.03210342642666158)\n eyenalysis : (0.03769443962733038, 0.018797771649342248)\n    frechet : (0.47416043566401406, 0.1273635493222585)\n  euclidean : (nan, nan)\n  hausdorff : (0.3373851008197109, 0.10884962662893234)\n recurrence : (2.034663036025434, 2.0770444670352073)\ndeterminism : (3.617598604025123, 14.232982894562529)\n laminarity : (0.0, 0.0)\n       CORM : (25.50694314776101, 22.81989875094059)\nlevenshtein : (5.7111716621253406, 4.416153219025678)\n     mannan : (0.0323939296471253, 0.044487697333002396)\n', stderr='')
+Testing,   DTW: 4.2726,   TDE: 0.1285,   Eye: 0.0377
+/home/guoz3/.conda/envs/eye_tracking/lib/python3.6/site-packages/torch/nn/functional.py:1639: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+Train Epoch: [2]  [ 0/29]  eta: 0:08:29  lr: 0.000010  loss_rl: 0.0723  rewards: -0.0673  time: 17.5536  data: 4.2648  max mem: 21320
+Train Epoch: [2]  [ 5/29]  eta: 0:04:38  lr: 0.000010  loss_rl: 0.0936  rewards: -0.1044  time: 11.5970  data: 0.7110  max mem: 21320
+Train Epoch: [2]  [10/29]  eta: 0:03:31  lr: 0.000010  loss_rl: 0.1147  rewards: -0.1065  time: 11.1437  data: 0.3879  max mem: 21320
+Train Epoch: [2]  [15/29]  eta: 0:02:33  lr: 0.000010  loss_rl: 0.1041  rewards: -0.0914  time: 10.9844  data: 0.2668  max mem: 21320
+Train Epoch: [2]  [20/29]  eta: 0:01:37  lr: 0.000010  loss_rl: 0.0864  rewards: -0.0985  time: 10.4572  data: 0.0002  max mem: 21320
+Train Epoch: [2]  [25/29]  eta: 0:00:41  lr: 0.000010  loss_rl: 0.0312  rewards: -0.0278  time: 10.1682  data: 0.0002  max mem: 21320
+Train Epoch: [2]  [28/29]  eta: 0:00:10  lr: 0.000010  loss_rl: 0.0699  rewards: -0.0633  time: 9.9646  data: 0.0002  max mem: 21320
+Train Epoch: [2] Total time: 0:05:00 (10.3675 s / it)
+Averaged stats: lr: 0.0000  loss_rl: 0.0787  rewards: -0.0793
+Testing:  [ 0/24]  eta: 0:00:41    time: 1.7153  data: 1.3622  max mem: 21320
+Testing:  [ 1/24]  eta: 0:00:24    time: 1.0636  data: 0.6811  max mem: 21320
+Testing:  [ 2/24]  eta: 0:00:18    time: 0.8220  data: 0.4541  max mem: 21320
+Testing:  [ 3/24]  eta: 0:00:14    time: 0.6948  data: 0.3406  max mem: 21320
+Testing:  [ 4/24]  eta: 0:00:13    time: 0.6652  data: 0.3267  max mem: 21320
+Testing:  [ 5/24]  eta: 0:00:11    time: 0.6002  data: 0.2722  max mem: 21320
+Testing:  [ 6/24]  eta: 0:00:10    time: 0.5567  data: 0.2334  max mem: 21320
+Testing:  [ 7/24]  eta: 0:00:08    time: 0.5221  data: 0.2042  max mem: 21320
+Testing:  [ 8/24]  eta: 0:00:08    time: 0.5164  data: 0.1890  max mem: 21320
+Testing:  [ 9/24]  eta: 0:00:07    time: 0.4964  data: 0.1701  max mem: 21320
+Testing:  [10/24]  eta: 0:00:06    time: 0.4766  data: 0.1547  max mem: 21320
+Testing:  [11/24]  eta: 0:00:06    time: 0.4623  data: 0.1418  max mem: 21320
+Testing:  [12/24]  eta: 0:00:05    time: 0.4890  data: 0.1720  max mem: 21320
+Testing:  [13/24]  eta: 0:00:05    time: 0.4740  data: 0.1597  max mem: 21320
+Testing:  [14/24]  eta: 0:00:04    time: 0.4608  data: 0.1491  max mem: 21320
+Testing:  [15/24]  eta: 0:00:04    time: 0.4501  data: 0.1398  max mem: 21320
+Testing:  [16/24]  eta: 0:00:03    time: 0.4405  data: 0.1315  max mem: 21320
+Testing:  [17/24]  eta: 0:00:03    time: 0.4316  data: 0.1242  max mem: 21320
+Testing:  [18/24]  eta: 0:00:02    time: 0.4234  data: 0.1177  max mem: 21320
+Testing:  [19/24]  eta: 0:00:02    time: 0.4161  data: 0.1118  max mem: 21320
+Testing:  [20/24]  eta: 0:00:01    time: 0.3441  data: 0.0437  max mem: 21320
+Testing:  [21/24]  eta: 0:00:01    time: 0.3373  data: 0.0437  max mem: 21320
+Testing:  [22/24]  eta: 0:00:00    time: 0.3341  data: 0.0437  max mem: 21320
+Testing:  [23/24]  eta: 0:00:00    time: 0.3235  data: 0.0437  max mem: 21320
+Testing: Total time: 0:00:09 (0.3914 s / it)
+CompletedProcess(args=['python', 'evaluation/eval_xy.py', '--scanpaths', '--ref_files', 'evaluation/testing_ground_truth.csv', '--pred_files', 'output/scanpath_prediction_population_rl/predicted_result.csv'], returncode=0, stdout='        DTW : (4.252488548826001, 1.2142698326679473)\n        TDE : (0.13126089802169336, 0.0351992319431669)\n eyenalysis : (0.03844303447237374, 0.019565287897391596)\n    frechet : (0.4784685126553069, 0.1297559074187062)\n  euclidean : (nan, nan)\n  hausdorff : (0.3525681882918822, 0.11925348661445023)\n recurrence : (1.943416105541446, 1.9785611160410466)\ndeterminism : (4.663617333681298, 16.202206075930135)\n laminarity : (0.0, 0.0)\n       CORM : (24.832885052244432, 23.608380430889937)\nlevenshtein : (5.7111716621253406, 4.416153219025678)\n     mannan : (0.03430910898352041, 0.0468895555794292)\n', stderr='')
+Testing,   DTW: 4.2525,   TDE: 0.1313,   Eye: 0.0384
+/home/guoz3/.conda/envs/eye_tracking/lib/python3.6/site-packages/torch/nn/functional.py:1639: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+Train Epoch: [3]  [ 0/29]  eta: 0:09:21  lr: 0.000010  loss_rl: 0.0830  rewards: -0.0757  time: 19.3723  data: 4.5439  max mem: 21320
+Train Epoch: [3]  [ 5/29]  eta: 0:05:13  lr: 0.000010  loss_rl: 0.0813  rewards: -0.0762  time: 13.0491  data: 0.7575  max mem: 21320
+Train Epoch: [3]  [10/29]  eta: 0:03:48  lr: 0.000010  loss_rl: 0.0195  rewards: -0.0147  time: 12.0062  data: 0.4133  max mem: 21320
+Train Epoch: [3]  [15/29]  eta: 0:02:42  lr: 0.000010  loss_rl: -0.0440  rewards: 0.0450  time: 11.5746  data: 0.2842  max mem: 21320
+Train Epoch: [3]  [20/29]  eta: 0:01:41  lr: 0.000010  loss_rl: 0.0600  rewards: -0.0651  time: 10.8426  data: 0.0002  max mem: 21320
+Train Epoch: [3]  [25/29]  eta: 0:00:43  lr: 0.000010  loss_rl: 0.0459  rewards: -0.0445  time: 10.2097  data: 0.0002  max mem: 21320
+Train Epoch: [3]  [28/29]  eta: 0:00:10  lr: 0.000010  loss_rl: 0.0312  rewards: -0.0324  time: 9.9316  data: 0.0002  max mem: 21320
+Train Epoch: [3] Total time: 0:05:10 (10.6953 s / it)
+Averaged stats: lr: 0.0000  loss_rl: 0.0576  rewards: -0.0569
+Testing:  [ 0/24]  eta: 0:00:42    time: 1.7733  data: 1.3851  max mem: 21320
+Testing:  [ 1/24]  eta: 0:00:23    time: 1.0261  data: 0.6926  max mem: 21320
+Testing:  [ 2/24]  eta: 0:00:17    time: 0.7777  data: 0.4617  max mem: 21320
+Testing:  [ 3/24]  eta: 0:00:13    time: 0.6545  data: 0.3463  max mem: 21320
+Testing:  [ 4/24]  eta: 0:00:12    time: 0.6369  data: 0.3107  max mem: 21320
+Testing:  [ 5/24]  eta: 0:00:11    time: 0.5988  data: 0.2589  max mem: 21320
+Testing:  [ 6/24]  eta: 0:00:10    time: 0.5683  data: 0.2219  max mem: 21320
+Testing:  [ 7/24]  eta: 0:00:09    time: 0.5417  data: 0.1942  max mem: 21320
+Testing:  [ 8/24]  eta: 0:00:08    time: 0.5127  data: 0.1726  max mem: 21320
+Testing:  [ 9/24]  eta: 0:00:07    time: 0.4895  data: 0.1554  max mem: 21320
+Testing:  [10/24]  eta: 0:00:07    time: 0.5007  data: 0.1641  max mem: 21320
+Testing:  [11/24]  eta: 0:00:06    time: 0.4834  data: 0.1504  max mem: 21320
+Testing:  [12/24]  eta: 0:00:05    time: 0.4674  data: 0.1389  max mem: 21320
+Testing:  [13/24]  eta: 0:00:04    time: 0.4540  data: 0.1290  max mem: 21320
+Testing:  [14/24]  eta: 0:00:04    time: 0.4500  data: 0.1204  max mem: 21320
+Testing:  [15/24]  eta: 0:00:04    time: 0.4457  data: 0.1132  max mem: 21320
+Testing:  [16/24]  eta: 0:00:03    time: 0.4358  data: 0.1065  max mem: 21320
+Testing:  [17/24]  eta: 0:00:02    time: 0.4269  data: 0.1006  max mem: 21320
+Testing:  [18/24]  eta: 0:00:02    time: 0.4189  data: 0.0953  max mem: 21320
+Testing:  [19/24]  eta: 0:00:02    time: 0.4117  data: 0.0905  max mem: 21320
+Testing:  [20/24]  eta: 0:00:01    time: 0.3368  data: 0.0213  max mem: 21320
+Testing:  [21/24]  eta: 0:00:01    time: 0.3365  data: 0.0213  max mem: 21320
+Testing:  [22/24]  eta: 0:00:00    time: 0.3362  data: 0.0213  max mem: 21320
+Testing:  [23/24]  eta: 0:00:00    time: 0.3269  data: 0.0213  max mem: 21320
+Testing: Total time: 0:00:09 (0.3866 s / it)
+CompletedProcess(args=['python', 'evaluation/eval_xy.py', '--scanpaths', '--ref_files', 'evaluation/testing_ground_truth.csv', '--pred_files', 'output/scanpath_prediction_population_rl/predicted_result.csv'], returncode=0, stdout='        DTW : (4.423629035999022, 1.2636296443674335)\n        TDE : (0.13415784327702032, 0.03576536169579809)\n eyenalysis : (0.03711753314727558, 0.018487847392511466)\n    frechet : (0.4998151672794032, 0.13325691431342224)\n  euclidean : (nan, nan)\n  hausdorff : (0.36909574132429845, 0.1258971696265377)\n recurrence : (1.866814686978175, 2.0822138244877384)\ndeterminism : (4.294118543694803, 15.795835624878805)\n laminarity : (0.0, 0.0)\n       CORM : (24.507677043435063, 23.25924532611206)\nlevenshtein : (5.7111716621253406, 4.416153219025678)\n     mannan : (0.032136718268335515, 0.04626758647193157)\n', stderr='')
+Testing,   DTW: 4.4236,   TDE: 0.1342,   Eye: 0.0371
+/home/guoz3/.conda/envs/eye_tracking/lib/python3.6/site-packages/torch/nn/functional.py:1639: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+Train Epoch: [4]  [ 0/29]  eta: 0:07:58  lr: 0.000009  loss_rl: 0.0492  rewards: -0.0480  time: 16.5158  data: 4.0347  max mem: 21320
+Train Epoch: [4]  [ 5/29]  eta: 0:04:51  lr: 0.000009  loss_rl: 0.1007  rewards: -0.0992  time: 12.1536  data: 0.6726  max mem: 21320
+Train Epoch: [4]  [10/29]  eta: 0:03:35  lr: 0.000009  loss_rl: 0.1044  rewards: -0.1010  time: 11.3357  data: 0.3670  max mem: 21320
+Train Epoch: [4]  [15/29]  eta: 0:02:39  lr: 0.000009  loss_rl: 0.0005  rewards: 0.0042  time: 11.3700  data: 0.2524  max mem: 21320
+Train Epoch: [4]  [20/29]  eta: 0:01:41  lr: 0.000009  loss_rl: 0.0491  rewards: -0.0408  time: 11.0476  data: 0.0002  max mem: 21320
+Train Epoch: [4]  [25/29]  eta: 0:00:43  lr: 0.000009  loss_rl: 0.1361  rewards: -0.1322  time: 10.6100  data: 0.0002  max mem: 21320
+Train Epoch: [4]  [28/29]  eta: 0:00:10  lr: 0.000009  loss_rl: 0.0290  rewards: -0.0184  time: 10.5550  data: 0.0002  max mem: 21320
+Train Epoch: [4] Total time: 0:05:14 (10.8283 s / it)
+Averaged stats: lr: 0.0000  loss_rl: 0.0462  rewards: -0.0459
+Testing:  [ 0/24]  eta: 0:00:41    time: 1.7484  data: 1.3955  max mem: 21320
+Testing:  [ 1/24]  eta: 0:00:24    time: 1.0518  data: 0.6978  max mem: 21320
+Testing:  [ 2/24]  eta: 0:00:17    time: 0.7951  data: 0.4652  max mem: 21320
+Testing:  [ 3/24]  eta: 0:00:13    time: 0.6657  data: 0.3489  max mem: 21320
+Testing:  [ 4/24]  eta: 0:00:11    time: 0.5931  data: 0.2808  max mem: 21320
+Testing:  [ 5/24]  eta: 0:00:10    time: 0.5415  data: 0.2340  max mem: 21320
+Testing:  [ 6/24]  eta: 0:00:09    time: 0.5036  data: 0.2006  max mem: 21320
+Testing:  [ 7/24]  eta: 0:00:08    time: 0.4755  data: 0.1755  max mem: 21320
+Testing:  [ 8/24]  eta: 0:00:08    time: 0.5062  data: 0.2089  max mem: 21320
+Testing:  [ 9/24]  eta: 0:00:07    time: 0.4831  data: 0.1880  max mem: 21320
+Testing:  [10/24]  eta: 0:00:06    time: 0.4642  data: 0.1709  max mem: 21320
+Testing:  [11/24]  eta: 0:00:05    time: 0.4487  data: 0.1567  max mem: 21320
+Testing:  [12/24]  eta: 0:00:05    time: 0.4558  data: 0.1582  max mem: 21320
+Testing:  [13/24]  eta: 0:00:04    time: 0.4502  data: 0.1541  max mem: 21320
+Testing:  [14/24]  eta: 0:00:04    time: 0.4388  data: 0.1438  max mem: 21320
+Testing:  [15/24]  eta: 0:00:03    time: 0.4289  data: 0.1348  max mem: 21320
+Testing:  [16/24]  eta: 0:00:03    time: 0.4200  data: 0.1269  max mem: 21320
+Testing:  [17/24]  eta: 0:00:02    time: 0.4125  data: 0.1199  max mem: 21320
+Testing:  [18/24]  eta: 0:00:02    time: 0.4056  data: 0.1135  max mem: 21320
+Testing:  [19/24]  eta: 0:00:01    time: 0.3995  data: 0.1079  max mem: 21320
+Testing:  [20/24]  eta: 0:00:01    time: 0.3260  data: 0.0381  max mem: 21320
+Testing:  [21/24]  eta: 0:00:01    time: 0.3222  data: 0.0381  max mem: 21320
+Testing:  [22/24]  eta: 0:00:00    time: 0.3219  data: 0.0381  max mem: 21320
+Testing:  [23/24]  eta: 0:00:00    time: 0.3135  data: 0.0381  max mem: 21320
+Testing: Total time: 0:00:09 (0.3781 s / it)
+CompletedProcess(args=['python', 'evaluation/eval_xy.py', '--scanpaths', '--ref_files', 'evaluation/testing_ground_truth.csv', '--pred_files', 'output/scanpath_prediction_population_rl/predicted_result.csv'], returncode=0, stdout='        DTW : (4.217954472884517, 1.2296455541446205)\n        TDE : (0.12674550754052627, 0.031460381646595925)\n eyenalysis : (0.037119392140803606, 0.018777803769687896)\n    frechet : (0.4675101641181092, 0.11916362981512019)\n  euclidean : (nan, nan)\n  hausdorff : (0.3279349770426248, 0.11112678885236212)\n recurrence : (1.8560284704698875, 2.0651252078064752)\ndeterminism : (3.9054155123757823, 15.48182154099939)\n laminarity : (0.0, 0.0)\n       CORM : (24.091249690875767, 23.124433979665486)\nlevenshtein : (5.7111716621253406, 4.416153219025678)\n     mannan : (0.03211831091444938, 0.04057189910573294)\n', stderr='')
+Testing,   DTW: 4.2180,   TDE: 0.1267,   Eye: 0.0371
+/home/guoz3/.conda/envs/eye_tracking/lib/python3.6/site-packages/torch/nn/functional.py:1639: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+Train Epoch: [5]  [ 0/29]  eta: 0:08:51  lr: 0.000009  loss_rl: 0.0932  rewards: -0.0864  time: 18.3224  data: 4.5384  max mem: 21320
+Train Epoch: [5]  [ 5/29]  eta: 0:04:59  lr: 0.000009  loss_rl: 0.0150  rewards: -0.0000  time: 12.4880  data: 0.7566  max mem: 21320
+Train Epoch: [5]  [10/29]  eta: 0:03:50  lr: 0.000009  loss_rl: 0.1258  rewards: -0.1232  time: 12.1054  data: 0.4128  max mem: 21320
+Train Epoch: [5]  [15/29]  eta: 0:02:49  lr: 0.000009  loss_rl: 0.0490  rewards: -0.0457  time: 12.0794  data: 0.2838  max mem: 21320
+Train Epoch: [5]  [20/29]  eta: 0:01:47  lr: 0.000009  loss_rl: 0.0672  rewards: -0.0597  time: 11.5758  data: 0.0002  max mem: 21320
+Train Epoch: [5]  [25/29]  eta: 0:00:46  lr: 0.000009  loss_rl: 0.1004  rewards: -0.0938  time: 11.2953  data: 0.0002  max mem: 21320
+Train Epoch: [5]  [28/29]  eta: 0:00:11  lr: 0.000009  loss_rl: 0.1059  rewards: -0.0969  time: 11.0550  data: 0.0002  max mem: 21320
+Train Epoch: [5] Total time: 0:05:31 (11.4194 s / it)
+Averaged stats: lr: 0.0000  loss_rl: 0.0543  rewards: -0.0523
+Testing:  [ 0/24]  eta: 0:00:42    time: 1.7611  data: 1.4025  max mem: 21320
+Testing:  [ 1/24]  eta: 0:00:23    time: 1.0175  data: 0.7013  max mem: 21320
+Testing:  [ 2/24]  eta: 0:00:16    time: 0.7699  data: 0.4675  max mem: 21320
+Testing:  [ 3/24]  eta: 0:00:13    time: 0.6462  data: 0.3507  max mem: 21320
+Testing:  [ 4/24]  eta: 0:00:11    time: 0.5913  data: 0.3001  max mem: 21320
+Testing:  [ 5/24]  eta: 0:00:10    time: 0.5388  data: 0.2501  max mem: 21320
+Testing:  [ 6/24]  eta: 0:00:09    time: 0.5172  data: 0.2306  max mem: 21320
+Testing:  [ 7/24]  eta: 0:00:08    time: 0.4870  data: 0.2018  max mem: 21320
+Testing:  [ 8/24]  eta: 0:00:07    time: 0.4633  data: 0.1794  max mem: 21320
+Testing:  [ 9/24]  eta: 0:00:07    time: 0.4707  data: 0.1861  max mem: 21320
+Testing:  [10/24]  eta: 0:00:06    time: 0.4936  data: 0.2096  max mem: 21320
+Testing:  [11/24]  eta: 0:00:06    time: 0.4759  data: 0.1921  max mem: 21320
+Testing:  [12/24]  eta: 0:00:05    time: 0.4611  data: 0.1774  max mem: 21320
+Testing:  [13/24]  eta: 0:00:05    time: 0.4562  data: 0.1647  max mem: 21320
+Testing:  [14/24]  eta: 0:00:04    time: 0.4440  data: 0.1537  max mem: 21320
+Testing:  [15/24]  eta: 0:00:03    time: 0.4359  data: 0.1441  max mem: 21320
+Testing:  [16/24]  eta: 0:00:03    time: 0.4265  data: 0.1356  max mem: 21320
+Testing:  [17/24]  eta: 0:00:02    time: 0.4182  data: 0.1281  max mem: 21320
+Testing:  [18/24]  eta: 0:00:02    time: 0.4202  data: 0.1308  max mem: 21320
+Testing:  [19/24]  eta: 0:00:02    time: 0.4130  data: 0.1242  max mem: 21320
+Testing:  [20/24]  eta: 0:00:01    time: 0.3388  data: 0.0541  max mem: 21320
+Testing:  [21/24]  eta: 0:00:01    time: 0.3397  data: 0.0541  max mem: 21320
+Testing:  [22/24]  eta: 0:00:00    time: 0.3398  data: 0.0541  max mem: 21320
+Testing:  [23/24]  eta: 0:00:00    time: 0.3319  data: 0.0541  max mem: 21320
+Testing: Total time: 0:00:09 (0.3893 s / it)
+CompletedProcess(args=['python', 'evaluation/eval_xy.py', '--scanpaths', '--ref_files', 'evaluation/testing_ground_truth.csv', '--pred_files', 'output/scanpath_prediction_population_rl/predicted_result.csv'], returncode=0, stdout='        DTW : (4.21928440700779, 1.0959477400803248)\n        TDE : (0.12252316241721892, 0.02631788563970371)\n eyenalysis : (0.036595611879959335, 0.018431693446171165)\n    frechet : (0.45241399584884473, 0.10378085065888308)\n  euclidean : (nan, nan)\n  hausdorff : (0.3147115433308111, 0.08840163665930967)\n recurrence : (1.8186657423714645, 1.8526628791155642)\ndeterminism : (3.8714803383521317, 15.512789878143261)\n laminarity : (0.0, 0.0)\n       CORM : (26.75013525676197, 24.07477483451789)\nlevenshtein : (5.7111716621253406, 4.416153219025678)\n     mannan : (0.03044451450183104, 0.0479657279722516)\n', stderr='')
+Testing,   DTW: 4.2193,   TDE: 0.1225,   Eye: 0.0366
+/home/guoz3/.conda/envs/eye_tracking/lib/python3.6/site-packages/torch/nn/functional.py:1639: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+Train Epoch: [6]  [ 0/29]  eta: 0:08:53  lr: 0.000008  loss_rl: 0.0843  rewards: -0.0776  time: 18.3894  data: 4.1686  max mem: 21320
+Train Epoch: [6]  [ 5/29]  eta: 0:04:51  lr: 0.000008  loss_rl: 0.1607  rewards: -0.1418  time: 12.1438  data: 0.6950  max mem: 21320
+Train Epoch: [6]  [10/29]  eta: 0:03:39  lr: 0.000008  loss_rl: 0.0279  rewards: -0.0216  time: 11.5529  data: 0.3792  max mem: 21320
+Train Epoch: [6]  [15/29]  eta: 0:02:37  lr: 0.000008  loss_rl: 0.0547  rewards: -0.0500  time: 11.2261  data: 0.2607  max mem: 21320
+Train Epoch: [6]  [20/29]  eta: 0:01:39  lr: 0.000008  loss_rl: 0.0433  rewards: -0.0299  time: 10.7353  data: 0.0002  max mem: 21320
+Train Epoch: [6]  [25/29]  eta: 0:00:43  lr: 0.000008  loss_rl: 0.1535  rewards: -0.1375  time: 10.4785  data: 0.0002  max mem: 21320
+Train Epoch: [6]  [28/29]  eta: 0:00:10  lr: 0.000008  loss_rl: 0.0536  rewards: -0.0560  time: 10.2870  data: 0.0002  max mem: 21320
+Train Epoch: [6] Total time: 0:05:11 (10.7308 s / it)
+Averaged stats: lr: 0.0000  loss_rl: 0.0648  rewards: -0.0599
+Testing:  [ 0/24]  eta: 0:00:41    time: 1.7126  data: 1.4317  max mem: 21320
+Testing:  [ 1/24]  eta: 0:00:23    time: 1.0064  data: 0.7252  max mem: 21320
+Testing:  [ 2/24]  eta: 0:00:16    time: 0.7643  data: 0.4835  max mem: 21320
+Testing:  [ 3/24]  eta: 0:00:13    time: 0.6512  data: 0.3626  max mem: 21320
+Testing:  [ 4/24]  eta: 0:00:14    time: 0.7187  data: 0.4320  max mem: 21320
+Testing:  [ 5/24]  eta: 0:00:12    time: 0.6456  data: 0.3600  max mem: 21320
+Testing:  [ 6/24]  eta: 0:00:10    time: 0.5934  data: 0.3086  max mem: 21320
+Testing:  [ 7/24]  eta: 0:00:09    time: 0.5690  data: 0.2700  max mem: 21320
+Testing:  [ 8/24]  eta: 0:00:08    time: 0.5536  data: 0.2563  max mem: 21320
+Testing:  [ 9/24]  eta: 0:00:07    time: 0.5264  data: 0.2307  max mem: 21320
+Testing:  [10/24]  eta: 0:00:07    time: 0.5062  data: 0.2097  max mem: 21320
+Testing:  [11/24]  eta: 0:00:06    time: 0.4968  data: 0.1923  max mem: 21320
+Testing:  [12/24]  eta: 0:00:05    time: 0.4861  data: 0.1839  max mem: 21320
+Testing:  [13/24]  eta: 0:00:05    time: 0.4712  data: 0.1708  max mem: 21320
+Testing:  [14/24]  eta: 0:00:04    time: 0.4584  data: 0.1594  max mem: 21320
+Testing:  [15/24]  eta: 0:00:04    time: 0.4472  data: 0.1494  max mem: 21320
+Testing:  [16/24]  eta: 0:00:03    time: 0.4609  data: 0.1642  max mem: 21320
+Testing:  [17/24]  eta: 0:00:03    time: 0.4508  data: 0.1550  max mem: 21320
+Testing:  [18/24]  eta: 0:00:02    time: 0.4418  data: 0.1469  max mem: 21320
+Testing:  [19/24]  eta: 0:00:02    time: 0.4338  data: 0.1395  max mem: 21320
+Testing:  [20/24]  eta: 0:00:01    time: 0.3620  data: 0.0680  max mem: 21320
+Testing:  [21/24]  eta: 0:00:01    time: 0.3609  data: 0.0670  max mem: 21320
+Testing:  [22/24]  eta: 0:00:00    time: 0.3610  data: 0.0670  max mem: 21320
+Testing:  [23/24]  eta: 0:00:00    time: 0.3512  data: 0.0670  max mem: 21320
+Testing: Total time: 0:00:09 (0.4061 s / it)
+CompletedProcess(args=['python', 'evaluation/eval_xy.py', '--scanpaths', '--ref_files', 'evaluation/testing_ground_truth.csv', '--pred_files', 'output/scanpath_prediction_population_rl/predicted_result.csv'], returncode=0, stdout='        DTW : (4.239694955200297, 1.1310654756188998)\n        TDE : (0.12337908096846419, 0.02811020242788475)\n eyenalysis : (0.03528311729596263, 0.017579624080506392)\n    frechet : (0.4654286363955697, 0.10893093877875773)\n  euclidean : (nan, nan)\n  hausdorff : (0.32084686207641594, 0.09726883016835508)\n recurrence : (1.7612693089532327, 1.775856295297802)\ndeterminism : (3.7585959292914857, 16.261852167793805)\n laminarity : (0.0, 0.0)\n       CORM : (25.541968604685525, 23.289225501885724)\nlevenshtein : (5.7111716621253406, 4.416153219025678)\n     mannan : (0.028244963020850215, 0.043372837153628385)\n', stderr='')
+Testing,   DTW: 4.2397,   TDE: 0.1234,   Eye: 0.0353
+/home/guoz3/.conda/envs/eye_tracking/lib/python3.6/site-packages/torch/nn/functional.py:1639: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+Train Epoch: [7]  [ 0/29]  eta: 0:08:41  lr: 0.000008  loss_rl: 0.0894  rewards: -0.0841  time: 17.9704  data: 3.6186  max mem: 21320
+Train Epoch: [7]  [ 5/29]  eta: 0:04:54  lr: 0.000008  loss_rl: 0.0561  rewards: -0.0585  time: 12.2594  data: 0.6033  max mem: 21320
+Train Epoch: [7]  [10/29]  eta: 0:03:37  lr: 0.000008  loss_rl: 0.0683  rewards: -0.0655  time: 11.4600  data: 0.3292  max mem: 21320
+Train Epoch: [7]  [15/29]  eta: 0:02:35  lr: 0.000008  loss_rl: 0.0351  rewards: -0.0429  time: 11.1307  data: 0.2263  max mem: 21320
+Train Epoch: [7]  [20/29]  eta: 0:01:37  lr: 0.000008  loss_rl: 0.0052  rewards: -0.0004  time: 10.4839  data: 0.0002  max mem: 21320
+Train Epoch: [7]  [25/29]  eta: 0:00:42  lr: 0.000008  loss_rl: 0.0122  rewards: -0.0194  time: 10.0191  data: 0.0002  max mem: 21320
+Train Epoch: [7]  [28/29]  eta: 0:00:10  lr: 0.000008  loss_rl: -0.0107  rewards: 0.0037  time: 9.8601  data: 0.0002  max mem: 21320
+Train Epoch: [7] Total time: 0:05:01 (10.3844 s / it)
+Averaged stats: lr: 0.0000  loss_rl: 0.0430  rewards: -0.0430
+Testing:  [ 0/24]  eta: 0:00:42    time: 1.7616  data: 1.3829  max mem: 21320
+Testing:  [ 1/24]  eta: 0:00:24    time: 1.0784  data: 0.6915  max mem: 21320
+Testing:  [ 2/24]  eta: 0:00:18    time: 0.8275  data: 0.4610  max mem: 21320
+Testing:  [ 3/24]  eta: 0:00:14    time: 0.6945  data: 0.3458  max mem: 21320
+Testing:  [ 4/24]  eta: 0:00:13    time: 0.6816  data: 0.3385  max mem: 21320
+Testing:  [ 5/24]  eta: 0:00:11    time: 0.6194  data: 0.2821  max mem: 21320
+Testing:  [ 6/24]  eta: 0:00:10    time: 0.5701  data: 0.2418  max mem: 21320
+Testing:  [ 7/24]  eta: 0:00:09    time: 0.5336  data: 0.2116  max mem: 21320
+Testing:  [ 8/24]  eta: 0:00:08    time: 0.5428  data: 0.2248  max mem: 21320
+Testing:  [ 9/24]  eta: 0:00:07    time: 0.5169  data: 0.2023  max mem: 21320
+Testing:  [10/24]  eta: 0:00:06    time: 0.4951  data: 0.1839  max mem: 21320
+Testing:  [11/24]  eta: 0:00:06    time: 0.4875  data: 0.1686  max mem: 21320
+Testing:  [12/24]  eta: 0:00:05    time: 0.4848  data: 0.1597  max mem: 21320
+Testing:  [13/24]  eta: 0:00:05    time: 0.4708  data: 0.1483  max mem: 21320
+Testing:  [14/24]  eta: 0:00:04    time: 0.4581  data: 0.1385  max mem: 21320
+Testing:  [15/24]  eta: 0:00:04    time: 0.4472  data: 0.1298  max mem: 21320
+Testing:  [16/24]  eta: 0:00:03    time: 0.4378  data: 0.1222  max mem: 21320
+Testing:  [17/24]  eta: 0:00:03    time: 0.4290  data: 0.1154  max mem: 21320
+Testing:  [18/24]  eta: 0:00:02    time: 0.4213  data: 0.1093  max mem: 21320
+Testing:  [19/24]  eta: 0:00:02    time: 0.4144  data: 0.1039  max mem: 21320
+Testing:  [20/24]  eta: 0:00:01    time: 0.3402  data: 0.0347  max mem: 21320
+Testing:  [21/24]  eta: 0:00:01    time: 0.3346  data: 0.0347  max mem: 21320
+Testing:  [22/24]  eta: 0:00:00    time: 0.3323  data: 0.0347  max mem: 21320
+Testing:  [23/24]  eta: 0:00:00    time: 0.3233  data: 0.0347  max mem: 21320
+Testing: Total time: 0:00:09 (0.3899 s / it)
+CompletedProcess(args=['python', 'evaluation/eval_xy.py', '--scanpaths', '--ref_files', 'evaluation/testing_ground_truth.csv', '--pred_files', 'output/scanpath_prediction_population_rl/predicted_result.csv'], returncode=0, stdout='        DTW : (4.2659792081073356, 1.1886151229484117)\n        TDE : (0.12994532670076442, 0.032278911203469)\n eyenalysis : (0.03651417721089983, 0.017764953606502466)\n    frechet : (0.46993018534161823, 0.11271643695782996)\n  euclidean : (nan, nan)\n  hausdorff : (0.3502176759642578, 0.11086821730416373)\n recurrence : (1.8010554386576185, 2.0501478461708014)\ndeterminism : (3.492741633176, 14.487715041341021)\n laminarity : (0.0, 0.0)\n       CORM : (23.438039161816818, 22.934455995398324)\nlevenshtein : (5.7111716621253406, 4.416153219025678)\n     mannan : (0.030108068278144922, 0.04140528911711583)\n', stderr='')
+Testing,   DTW: 4.2660,   TDE: 0.1299,   Eye: 0.0365
+/home/guoz3/.conda/envs/eye_tracking/lib/python3.6/site-packages/torch/nn/functional.py:1639: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+Train Epoch: [8]  [ 0/29]  eta: 0:10:12  lr: 0.000007  loss_rl: 0.0260  rewards: -0.0257  time: 21.1279  data: 4.4798  max mem: 21320
+Train Epoch: [8]  [ 5/29]  eta: 0:05:23  lr: 0.000007  loss_rl: 0.0947  rewards: -0.0821  time: 13.4938  data: 0.7468  max mem: 21320
+Train Epoch: [8]  [10/29]  eta: 0:04:06  lr: 0.000007  loss_rl: 0.0684  rewards: -0.0696  time: 12.9908  data: 0.4074  max mem: 21320
+Train Epoch: [8]  [15/29]  eta: 0:02:53  lr: 0.000007  loss_rl: 0.0637  rewards: -0.0534  time: 12.3816  data: 0.2802  max mem: 21320
+Train Epoch: [8]  [20/29]  eta: 0:01:46  lr: 0.000007  loss_rl: 0.0133  rewards: -0.0058  time: 11.3949  data: 0.0002  max mem: 21320
+Train Epoch: [8]  [25/29]  eta: 0:00:46  lr: 0.000007  loss_rl: 0.0841  rewards: -0.0638  time: 10.9028  data: 0.0002  max mem: 21320
+Train Epoch: [8]  [28/29]  eta: 0:00:11  lr: 0.000007  loss_rl: -0.0615  rewards: 0.0537  time: 10.5023  data: 0.0002  max mem: 21320
+Train Epoch: [8] Total time: 0:05:28 (11.3435 s / it)
+Averaged stats: lr: 0.0000  loss_rl: 0.0537  rewards: -0.0485
+Testing:  [ 0/24]  eta: 0:00:41    time: 1.7130  data: 1.4095  max mem: 21320
+Testing:  [ 1/24]  eta: 0:00:22    time: 0.9965  data: 0.7048  max mem: 21320
+Testing:  [ 2/24]  eta: 0:00:16    time: 0.7589  data: 0.4699  max mem: 21320
+Testing:  [ 3/24]  eta: 0:00:13    time: 0.6397  data: 0.3524  max mem: 21320
+Testing:  [ 4/24]  eta: 0:00:11    time: 0.5964  data: 0.3049  max mem: 21320
+Testing:  [ 5/24]  eta: 0:00:10    time: 0.5641  data: 0.2752  max mem: 21320
+Testing:  [ 6/24]  eta: 0:00:09    time: 0.5234  data: 0.2359  max mem: 21320
+Testing:  [ 7/24]  eta: 0:00:08    time: 0.4954  data: 0.2064  max mem: 21320
+Testing:  [ 8/24]  eta: 0:00:07    time: 0.4716  data: 0.1835  max mem: 21320
+Testing:  [ 9/24]  eta: 0:00:07    time: 0.5017  data: 0.2041  max mem: 21320
+Testing:  [10/24]  eta: 0:00:06    time: 0.4832  data: 0.1856  max mem: 21320
+Testing:  [11/24]  eta: 0:00:06    time: 0.4659  data: 0.1701  max mem: 21320
+Testing:  [12/24]  eta: 0:00:05    time: 0.4515  data: 0.1570  max mem: 21320
+Testing:  [13/24]  eta: 0:00:05    time: 0.4630  data: 0.1624  max mem: 21320
+Testing:  [14/24]  eta: 0:00:04    time: 0.4504  data: 0.1516  max mem: 21320
+Testing:  [15/24]  eta: 0:00:03    time: 0.4424  data: 0.1421  max mem: 21320
+Testing:  [16/24]  eta: 0:00:03    time: 0.4328  data: 0.1338  max mem: 21320
+Testing:  [17/24]  eta: 0:00:02    time: 0.4242  data: 0.1263  max mem: 21320
+Testing:  [18/24]  eta: 0:00:02    time: 0.4163  data: 0.1197  max mem: 21320
+Testing:  [19/24]  eta: 0:00:02    time: 0.4092  data: 0.1137  max mem: 21320
+Testing:  [20/24]  eta: 0:00:01    time: 0.3376  data: 0.0432  max mem: 21320
+Testing:  [21/24]  eta: 0:00:01    time: 0.3375  data: 0.0432  max mem: 21320
+Testing:  [22/24]  eta: 0:00:00    time: 0.3370  data: 0.0432  max mem: 21320
+Testing:  [23/24]  eta: 0:00:00    time: 0.3287  data: 0.0432  max mem: 21320
+Testing: Total time: 0:00:09 (0.3862 s / it)
+CompletedProcess(args=['python', 'evaluation/eval_xy.py', '--scanpaths', '--ref_files', 'evaluation/testing_ground_truth.csv', '--pred_files', 'output/scanpath_prediction_population_rl/predicted_result.csv'], returncode=0, stdout='        DTW : (4.3401448390763555, 1.1014835154044966)\n        TDE : (0.1294459587771166, 0.03056896927433186)\n eyenalysis : (0.040406084064532395, 0.021094670873528204)\n    frechet : (0.46946722252156176, 0.10587748845047779)\n  euclidean : (nan, nan)\n  hausdorff : (0.35342383226988894, 0.10321354906211781)\n recurrence : (1.8283041511924347, 2.0031707156160703)\ndeterminism : (4.269981670199329, 16.41630797779097)\n laminarity : (0.0, 0.0)\n       CORM : (26.23564616506813, 23.528734679028855)\nlevenshtein : (5.7111716621253406, 4.416153219025678)\n     mannan : (0.03851633252490199, 0.06323894576846946)\n', stderr='')
+Testing,   DTW: 4.3401,   TDE: 0.1294,   Eye: 0.0404
+/home/guoz3/.conda/envs/eye_tracking/lib/python3.6/site-packages/torch/nn/functional.py:1639: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+Train Epoch: [9]  [ 0/29]  eta: 0:09:20  lr: 0.000006  loss_rl: 0.0003  rewards: 0.0000  time: 19.3304  data: 4.6145  max mem: 21320
+Train Epoch: [9]  [ 5/29]  eta: 0:05:02  lr: 0.000006  loss_rl: 0.0871  rewards: -0.0794  time: 12.5928  data: 0.7693  max mem: 21320
+Train Epoch: [9]  [10/29]  eta: 0:03:49  lr: 0.000006  loss_rl: 0.0444  rewards: -0.0359  time: 12.0691  data: 0.4197  max mem: 21320
+Train Epoch: [9]  [15/29]  eta: 0:02:39  lr: 0.000006  loss_rl: 0.0314  rewards: -0.0190  time: 11.3971  data: 0.2886  max mem: 21320
+Train Epoch: [9]  [20/29]  eta: 0:01:41  lr: 0.000006  loss_rl: 0.0808  rewards: -0.0772  time: 10.8306  data: 0.0002  max mem: 21320
+Train Epoch: [9]  [25/29]  eta: 0:00:43  lr: 0.000006  loss_rl: 0.0848  rewards: -0.0685  time: 10.3720  data: 0.0001  max mem: 21320
+Train Epoch: [9]  [28/29]  eta: 0:00:10  lr: 0.000006  loss_rl: -0.0061  rewards: 0.0137  time: 10.0034  data: 0.0001  max mem: 21320
+Train Epoch: [9] Total time: 0:05:11 (10.7416 s / it)
+Averaged stats: lr: 0.0000  loss_rl: 0.0452  rewards: -0.0413
+Testing:  [ 0/24]  eta: 0:00:43    time: 1.8262  data: 1.4231  max mem: 21320
+Testing:  [ 1/24]  eta: 0:00:25    time: 1.1070  data: 0.7144  max mem: 21320
+Testing:  [ 2/24]  eta: 0:00:19    time: 0.8713  data: 0.4763  max mem: 21320
+Testing:  [ 3/24]  eta: 0:00:15    time: 0.7469  data: 0.3572  max mem: 21320
+Testing:  [ 4/24]  eta: 0:00:13    time: 0.6935  data: 0.3268  max mem: 21320
+Testing:  [ 5/24]  eta: 0:00:11    time: 0.6282  data: 0.2724  max mem: 21320
+Testing:  [ 6/24]  eta: 0:00:10    time: 0.5777  data: 0.2335  max mem: 21320
+Testing:  [ 7/24]  eta: 0:00:09    time: 0.5400  data: 0.2043  max mem: 21320
+Testing:  [ 8/24]  eta: 0:00:08    time: 0.5607  data: 0.2247  max mem: 21320
+Testing:  [ 9/24]  eta: 0:00:07    time: 0.5326  data: 0.2023  max mem: 21320
+Testing:  [10/24]  eta: 0:00:07    time: 0.5093  data: 0.1839  max mem: 21320
+Testing:  [11/24]  eta: 0:00:06    time: 0.4898  data: 0.1686  max mem: 21320
+Testing:  [12/24]  eta: 0:00:06    time: 0.5055  data: 0.1879  max mem: 21320
+Testing:  [13/24]  eta: 0:00:05    time: 0.4890  data: 0.1744  max mem: 21320
+Testing:  [14/24]  eta: 0:00:04    time: 0.4749  data: 0.1628  max mem: 21320
+Testing:  [15/24]  eta: 0:00:04    time: 0.4661  data: 0.1526  max mem: 21320
+Testing:  [16/24]  eta: 0:00:03    time: 0.4576  data: 0.1460  max mem: 21320
+Testing:  [17/24]  eta: 0:00:03    time: 0.4475  data: 0.1379  max mem: 21320
+Testing:  [18/24]  eta: 0:00:02    time: 0.4384  data: 0.1307  max mem: 21320
+Testing:  [19/24]  eta: 0:00:02    time: 0.4308  data: 0.1241  max mem: 21320
+Testing:  [20/24]  eta: 0:00:01    time: 0.3534  data: 0.0530  max mem: 21320
+Testing:  [21/24]  eta: 0:00:01    time: 0.3479  data: 0.0527  max mem: 21320
+Testing:  [22/24]  eta: 0:00:00    time: 0.3418  data: 0.0527  max mem: 21320
+Testing:  [23/24]  eta: 0:00:00    time: 0.3289  data: 0.0527  max mem: 21320
+Testing: Total time: 0:00:09 (0.4033 s / it)
+CompletedProcess(args=['python', 'evaluation/eval_xy.py', '--scanpaths', '--ref_files', 'evaluation/testing_ground_truth.csv', '--pred_files', 'output/scanpath_prediction_population_rl/predicted_result.csv'], returncode=0, stdout='        DTW : (4.279657586269574, 1.1591685901209494)\n        TDE : (0.1283550766760468, 0.030924202334326124)\n eyenalysis : (0.03760389750894587, 0.018578867732927613)\n    frechet : (0.4693439946746813, 0.1109723019458962)\n  euclidean : (nan, nan)\n  hausdorff : (0.34660522036722735, 0.10664737441305841)\n recurrence : (1.786733551038728, 2.021186718197131)\ndeterminism : (4.280091537566462, 16.442729364332312)\n laminarity : (0.0, 0.0)\n       CORM : (23.975556296671268, 23.2446681654859)\nlevenshtein : (5.7111716621253406, 4.416153219025678)\n     mannan : (0.03220786968944442, 0.048609732926476204)\n', stderr='')
+Testing,   DTW: 4.2797,   TDE: 0.1284,   Eye: 0.0376
+/home/guoz3/.conda/envs/eye_tracking/lib/python3.6/site-packages/torch/nn/functional.py:1639: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+Train Epoch: [10]  [ 0/29]  eta: 0:08:52  lr: 0.000005  loss_rl: 0.0850  rewards: -0.0770  time: 18.3624  data: 4.9354  max mem: 21320
+Train Epoch: [10]  [ 5/29]  eta: 0:05:04  lr: 0.000005  loss_rl: 0.0281  rewards: -0.0396  time: 12.6970  data: 0.8228  max mem: 21320
+Train Epoch: [10]  [10/29]  eta: 0:03:51  lr: 0.000005  loss_rl: 0.0885  rewards: -0.0823  time: 12.2013  data: 0.4489  max mem: 21320
+Train Epoch: [10]  [15/29]  eta: 0:02:50  lr: 0.000005  loss_rl: 0.0233  rewards: -0.0287  time: 12.1878  data: 0.3087  max mem: 21320
+Train Epoch: [10]  [20/29]  eta: 0:01:49  lr: 0.000005  loss_rl: 0.0754  rewards: -0.0664  time: 11.8489  data: 0.0002  max mem: 21320
+Train Epoch: [10]  [25/29]  eta: 0:00:46  lr: 0.000005  loss_rl: 0.0084  rewards: -0.0137  time: 11.4560  data: 0.0002  max mem: 21320
+Train Epoch: [10]  [28/29]  eta: 0:00:11  lr: 0.000005  loss_rl: 0.1096  rewards: -0.1077  time: 11.2904  data: 0.0002  max mem: 21320
+Train Epoch: [10] Total time: 0:05:36 (11.5901 s / it)
+Averaged stats: lr: 0.0000  loss_rl: 0.0554  rewards: -0.0528
+Testing:  [ 0/24]  eta: 0:00:43    time: 1.8104  data: 1.4896  max mem: 21320
+Testing:  [ 1/24]  eta: 0:00:25    time: 1.1090  data: 0.7448  max mem: 21320
+Testing:  [ 2/24]  eta: 0:00:18    time: 0.8565  data: 0.4966  max mem: 21320
+Testing:  [ 3/24]  eta: 0:00:15    time: 0.7430  data: 0.3724  max mem: 21320
+Testing:  [ 4/24]  eta: 0:00:13    time: 0.6767  data: 0.3103  max mem: 21320
+Testing:  [ 5/24]  eta: 0:00:11    time: 0.6104  data: 0.2594  max mem: 21320
+Testing:  [ 6/24]  eta: 0:00:10    time: 0.5629  data: 0.2224  max mem: 21320
+Testing:  [ 7/24]  eta: 0:00:08    time: 0.5268  data: 0.1946  max mem: 21320
+Testing:  [ 8/24]  eta: 0:00:08    time: 0.5548  data: 0.2147  max mem: 21320
+Testing:  [ 9/24]  eta: 0:00:08    time: 0.5349  data: 0.1933  max mem: 21320
+Testing:  [10/24]  eta: 0:00:07    time: 0.5121  data: 0.1757  max mem: 21320
+Testing:  [11/24]  eta: 0:00:06    time: 0.4933  data: 0.1611  max mem: 21320
+Testing:  [12/24]  eta: 0:00:05    time: 0.4783  data: 0.1487  max mem: 21320
+Testing:  [13/24]  eta: 0:00:05    time: 0.4641  data: 0.1381  max mem: 21320
+Testing:  [14/24]  eta: 0:00:04    time: 0.4524  data: 0.1289  max mem: 21320
+Testing:  [15/24]  eta: 0:00:03    time: 0.4416  data: 0.1208  max mem: 21320
+Testing:  [16/24]  eta: 0:00:03    time: 0.4321  data: 0.1137  max mem: 21320
+Testing:  [17/24]  eta: 0:00:03    time: 0.4304  data: 0.1074  max mem: 21320
+Testing:  [18/24]  eta: 0:00:02    time: 0.4222  data: 0.1017  max mem: 21320
+Testing:  [19/24]  eta: 0:00:02    time: 0.4148  data: 0.0967  max mem: 21320
+Testing:  [20/24]  eta: 0:00:01    time: 0.3379  data: 0.0222  max mem: 21320
+Testing:  [21/24]  eta: 0:00:01    time: 0.3312  data: 0.0222  max mem: 21320
+Testing:  [22/24]  eta: 0:00:00    time: 0.3273  data: 0.0222  max mem: 21320
+Testing:  [23/24]  eta: 0:00:00    time: 0.3122  data: 0.0222  max mem: 21320
+Testing: Total time: 0:00:09 (0.3890 s / it)
+CompletedProcess(args=['python', 'evaluation/eval_xy.py', '--scanpaths', '--ref_files', 'evaluation/testing_ground_truth.csv', '--pred_files', 'output/scanpath_prediction_population_rl/predicted_result.csv'], returncode=0, stdout='        DTW : (4.3023651425426745, 1.0930324403932241)\n        TDE : (0.12518283277347234, 0.028487643595691347)\n eyenalysis : (0.037121965782155084, 0.019060602614495416)\n    frechet : (0.4629072794141146, 0.10503760460210015)\n  euclidean : (nan, nan)\n  hausdorff : (0.33899118485096835, 0.10041139925735891)\n recurrence : (1.7607097716089544, 1.8118736675627904)\ndeterminism : (4.367133587338023, 17.581736784261768)\n laminarity : (0.0, 0.0)\n       CORM : (24.84157565964075, 22.75430656274112)\nlevenshtein : (5.7111716621253406, 4.416153219025678)\n     mannan : (0.03196910028277759, 0.05440081849728961)\n', stderr='')
+Testing,   DTW: 4.3024,   TDE: 0.1252,   Eye: 0.0371
+/home/guoz3/.conda/envs/eye_tracking/lib/python3.6/site-packages/torch/nn/functional.py:1639: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+Train Epoch: [11]  [ 0/29]  eta: 0:10:02  lr: 0.000005  loss_rl: 0.0980  rewards: -0.0927  time: 20.7778  data: 4.6094  max mem: 21320
+Train Epoch: [11]  [ 5/29]  eta: 0:05:35  lr: 0.000005  loss_rl: 0.0887  rewards: -0.0766  time: 13.9593  data: 0.7684  max mem: 21320
+Train Epoch: [11]  [10/29]  eta: 0:04:09  lr: 0.000005  loss_rl: 0.0513  rewards: -0.0552  time: 13.1454  data: 0.4192  max mem: 21320
+Train Epoch: [11]  [15/29]  eta: 0:02:57  lr: 0.000005  loss_rl: 0.0441  rewards: -0.0453  time: 12.6811  data: 0.2883  max mem: 21320
+Train Epoch: [11]  [20/29]  eta: 0:01:52  lr: 0.000005  loss_rl: 0.0436  rewards: -0.0377  time: 12.0927  data: 0.0002  max mem: 21320
+Train Epoch: [11]  [25/29]  eta: 0:00:48  lr: 0.000005  loss_rl: 0.0322  rewards: -0.0325  time: 11.5793  data: 0.0002  max mem: 21320
+Train Epoch: [11]  [28/29]  eta: 0:00:11  lr: 0.000005  loss_rl: 0.0871  rewards: -0.0822  time: 11.1954  data: 0.0002  max mem: 21320
+Train Epoch: [11] Total time: 0:05:44 (11.8955 s / it)
+Averaged stats: lr: 0.0000  loss_rl: 0.0632  rewards: -0.0601
+Testing:  [ 0/24]  eta: 0:00:40    time: 1.7000  data: 1.3969  max mem: 21320
+Testing:  [ 1/24]  eta: 0:00:22    time: 0.9873  data: 0.6985  max mem: 21320
+Testing:  [ 2/24]  eta: 0:00:16    time: 0.7496  data: 0.4657  max mem: 21320
+Testing:  [ 3/24]  eta: 0:00:13    time: 0.6312  data: 0.3493  max mem: 21320
+Testing:  [ 4/24]  eta: 0:00:12    time: 0.6100  data: 0.3175  max mem: 21320
+Testing:  [ 5/24]  eta: 0:00:11    time: 0.5812  data: 0.2715  max mem: 21320
+Testing:  [ 6/24]  eta: 0:00:09    time: 0.5416  data: 0.2327  max mem: 21320
+Testing:  [ 7/24]  eta: 0:00:08    time: 0.5252  data: 0.2036  max mem: 21320
+Testing:  [ 8/24]  eta: 0:00:07    time: 0.4989  data: 0.1810  max mem: 21320
+Testing:  [ 9/24]  eta: 0:00:07    time: 0.4770  data: 0.1629  max mem: 21320
+Testing:  [10/24]  eta: 0:00:06    time: 0.4590  data: 0.1481  max mem: 21320
+Testing:  [11/24]  eta: 0:00:05    time: 0.4443  data: 0.1358  max mem: 21320
+Testing:  [12/24]  eta: 0:00:05    time: 0.4385  data: 0.1323  max mem: 21320
+Testing:  [13/24]  eta: 0:00:04    time: 0.4337  data: 0.1228  max mem: 21320
+Testing:  [14/24]  eta: 0:00:04    time: 0.4257  data: 0.1153  max mem: 21320
+Testing:  [15/24]  eta: 0:00:03    time: 0.4227  data: 0.1081  max mem: 21320
+Testing:  [16/24]  eta: 0:00:03    time: 0.4208  data: 0.1018  max mem: 21320
+Testing:  [17/24]  eta: 0:00:02    time: 0.4165  data: 0.0961  max mem: 21320
+Testing:  [18/24]  eta: 0:00:02    time: 0.4095  data: 0.0911  max mem: 21320
+Testing:  [19/24]  eta: 0:00:02    time: 0.4030  data: 0.0865  max mem: 21320
+Testing:  [20/24]  eta: 0:00:01    time: 0.3320  data: 0.0167  max mem: 21320
+Testing:  [21/24]  eta: 0:00:01    time: 0.3321  data: 0.0167  max mem: 21320
+Testing:  [22/24]  eta: 0:00:00    time: 0.3323  data: 0.0167  max mem: 21320
+Testing:  [23/24]  eta: 0:00:00    time: 0.3242  data: 0.0167  max mem: 21320
+Testing: Total time: 0:00:09 (0.3819 s / it)
+CompletedProcess(args=['python', 'evaluation/eval_xy.py', '--scanpaths', '--ref_files', 'evaluation/testing_ground_truth.csv', '--pred_files', 'output/scanpath_prediction_population_rl/predicted_result.csv'], returncode=0, stdout='        DTW : (4.200745558876077, 1.1416067829407575)\n        TDE : (0.12491976064826316, 0.029608543560067743)\n eyenalysis : (0.03640388347482987, 0.017692825628806533)\n    frechet : (0.4611774962842754, 0.11018669526624096)\n  euclidean : (nan, nan)\n  hausdorff : (0.3306256235375372, 0.1024402464838764)\n recurrence : (1.7529518619436877, 1.8891832939964512)\ndeterminism : (3.598892647128652, 15.284715507481167)\n laminarity : (0.0, 0.0)\n       CORM : (23.665922039016607, 22.924366576221797)\nlevenshtein : (5.7111716621253406, 4.416153219025678)\n     mannan : (0.029723753917992403, 0.04152976394972349)\n', stderr='')
+Testing,   DTW: 4.2007,   TDE: 0.1249,   Eye: 0.0364
+/home/guoz3/.conda/envs/eye_tracking/lib/python3.6/site-packages/torch/nn/functional.py:1639: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+Train Epoch: [12]  [ 0/29]  eta: 0:08:55  lr: 0.000004  loss_rl: 0.0452  rewards: -0.0328  time: 18.4718  data: 3.7971  max mem: 21320
+Train Epoch: [12]  [ 5/29]  eta: 0:04:48  lr: 0.000004  loss_rl: 0.0604  rewards: -0.0546  time: 12.0295  data: 0.6331  max mem: 21320
+Train Epoch: [12]  [10/29]  eta: 0:03:37  lr: 0.000004  loss_rl: 0.0572  rewards: -0.0472  time: 11.4376  data: 0.3454  max mem: 21320
+Train Epoch: [12]  [15/29]  eta: 0:02:38  lr: 0.000004  loss_rl: 0.0738  rewards: -0.0706  time: 11.3378  data: 0.2375  max mem: 21320
+Train Epoch: [12]  [20/29]  eta: 0:01:40  lr: 0.000004  loss_rl: -0.0016  rewards: 0.0026  time: 10.7565  data: 0.0002  max mem: 21320
+Train Epoch: [12]  [25/29]  eta: 0:00:42  lr: 0.000004  loss_rl: 0.1240  rewards: -0.1180  time: 10.3578  data: 0.0001  max mem: 21320
+Train Epoch: [12]  [28/29]  eta: 0:00:10  lr: 0.000004  loss_rl: -0.0206  rewards: 0.0284  time: 10.1598  data: 0.0001  max mem: 21320
+Train Epoch: [12] Total time: 0:05:07 (10.5893 s / it)
+Averaged stats: lr: 0.0000  loss_rl: 0.0553  rewards: -0.0500
+Testing:  [ 0/24]  eta: 0:00:39    time: 1.6399  data: 1.3403  max mem: 21320
+Testing:  [ 1/24]  eta: 0:00:22    time: 0.9595  data: 0.6702  max mem: 21320
+Testing:  [ 2/24]  eta: 0:00:16    time: 0.7329  data: 0.4468  max mem: 21320
+Testing:  [ 3/24]  eta: 0:00:13    time: 0.6196  data: 0.3351  max mem: 21320
+Testing:  [ 4/24]  eta: 0:00:14    time: 0.7088  data: 0.4169  max mem: 21320
+Testing:  [ 5/24]  eta: 0:00:12    time: 0.6411  data: 0.3474  max mem: 21320
+Testing:  [ 6/24]  eta: 0:00:10    time: 0.5904  data: 0.2978  max mem: 21320
+Testing:  [ 7/24]  eta: 0:00:09    time: 0.5540  data: 0.2606  max mem: 21320
+Testing:  [ 8/24]  eta: 0:00:08    time: 0.5233  data: 0.2316  max mem: 21320
+Testing:  [ 9/24]  eta: 0:00:07    time: 0.5109  data: 0.2085  max mem: 21320
+Testing:  [10/24]  eta: 0:00:07    time: 0.5016  data: 0.1901  max mem: 21320
+Testing:  [11/24]  eta: 0:00:06    time: 0.4889  data: 0.1743  max mem: 21320
+Testing:  [12/24]  eta: 0:00:05    time: 0.4728  data: 0.1609  max mem: 21320
+Testing:  [13/24]  eta: 0:00:05    time: 0.4605  data: 0.1494  max mem: 21320
+Testing:  [14/24]  eta: 0:00:04    time: 0.4486  data: 0.1394  max mem: 21320
+Testing:  [15/24]  eta: 0:00:03    time: 0.4392  data: 0.1307  max mem: 21320
+Testing:  [16/24]  eta: 0:00:03    time: 0.4310  data: 0.1230  max mem: 21320
+Testing:  [17/24]  eta: 0:00:02    time: 0.4226  data: 0.1162  max mem: 21320
+Testing:  [18/24]  eta: 0:00:02    time: 0.4151  data: 0.1101  max mem: 21320
+Testing:  [19/24]  eta: 0:00:02    time: 0.4087  data: 0.1046  max mem: 21320
+Testing:  [20/24]  eta: 0:00:01    time: 0.3406  data: 0.0376  max mem: 21320
+Testing:  [21/24]  eta: 0:00:01    time: 0.3406  data: 0.0376  max mem: 21320
+Testing:  [22/24]  eta: 0:00:00    time: 0.3406  data: 0.0376  max mem: 21320
+Testing:  [23/24]  eta: 0:00:00    time: 0.3324  data: 0.0376  max mem: 21320
+Testing: Total time: 0:00:09 (0.3856 s / it)
+CompletedProcess(args=['python', 'evaluation/eval_xy.py', '--scanpaths', '--ref_files', 'evaluation/testing_ground_truth.csv', '--pred_files', 'output/scanpath_prediction_population_rl/predicted_result.csv'], returncode=0, stdout='        DTW : (4.222511172623951, 1.0989672930765733)\n        TDE : (0.12383245882659866, 0.028377753723699585)\n eyenalysis : (0.03652950724477656, 0.017914568729950276)\n    frechet : (0.46038997720352004, 0.10591256908321912)\n  euclidean : (nan, nan)\n  hausdorff : (0.3273891318251112, 0.09985973895374221)\n recurrence : (1.7021541885302105, 1.780374914633928)\ndeterminism : (4.750983748282857, 18.347541909971802)\n laminarity : (0.0, 0.0)\n       CORM : (23.571696679903834, 22.535361423912942)\nlevenshtein : (5.7111716621253406, 4.416153219025678)\n     mannan : (0.029873773265301003, 0.04504102438840371)\n', stderr='')
+Testing,   DTW: 4.2225,   TDE: 0.1238,   Eye: 0.0365
+/home/guoz3/.conda/envs/eye_tracking/lib/python3.6/site-packages/torch/nn/functional.py:1639: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+Train Epoch: [13]  [ 0/29]  eta: 0:09:58  lr: 0.000003  loss_rl: -0.0314  rewards: 0.0147  time: 20.6476  data: 4.7038  max mem: 21320
+Train Epoch: [13]  [ 5/29]  eta: 0:05:13  lr: 0.000003  loss_rl: 0.0404  rewards: -0.0411  time: 13.0453  data: 0.7841  max mem: 21320
+Train Epoch: [13]  [10/29]  eta: 0:03:47  lr: 0.000003  loss_rl: -0.0011  rewards: -0.0036  time: 11.9998  data: 0.4278  max mem: 21320
+Train Epoch: [13]  [15/29]  eta: 0:02:42  lr: 0.000003  loss_rl: 0.1869  rewards: -0.1779  time: 11.6271  data: 0.2942  max mem: 21320
+Train Epoch: [13]  [20/29]  eta: 0:01:42  lr: 0.000003  loss_rl: 0.1026  rewards: -0.0921  time: 10.9019  data: 0.0002  max mem: 21320
+Train Epoch: [13]  [25/29]  eta: 0:00:44  lr: 0.000003  loss_rl: 0.0675  rewards: -0.0665  time: 10.4455  data: 0.0002  max mem: 21320
+Train Epoch: [13]  [28/29]  eta: 0:00:10  lr: 0.000003  loss_rl: 0.1464  rewards: -0.1417  time: 10.3235  data: 0.0002  max mem: 21320
+Train Epoch: [13] Total time: 0:05:17 (10.9318 s / it)
+Averaged stats: lr: 0.0000  loss_rl: 0.0623  rewards: -0.0562
+Testing:  [ 0/24]  eta: 0:00:40    time: 1.7036  data: 1.3795  max mem: 21320
+Testing:  [ 1/24]  eta: 0:00:22    time: 0.9949  data: 0.6898  max mem: 21320
+Testing:  [ 2/24]  eta: 0:00:16    time: 0.7629  data: 0.4599  max mem: 21320
+Testing:  [ 3/24]  eta: 0:00:13    time: 0.6506  data: 0.3449  max mem: 21320
+Testing:  [ 4/24]  eta: 0:00:13    time: 0.6791  data: 0.3540  max mem: 21320
+Testing:  [ 5/24]  eta: 0:00:11    time: 0.6256  data: 0.2958  max mem: 21320
+Testing:  [ 6/24]  eta: 0:00:10    time: 0.5916  data: 0.2536  max mem: 21320
+Testing:  [ 7/24]  eta: 0:00:09    time: 0.5521  data: 0.2219  max mem: 21320
+Testing:  [ 8/24]  eta: 0:00:08    time: 0.5343  data: 0.1973  max mem: 21320
+Testing:  [ 9/24]  eta: 0:00:07    time: 0.5094  data: 0.1775  max mem: 21320
+Testing:  [10/24]  eta: 0:00:06    time: 0.4897  data: 0.1614  max mem: 21320
+Testing:  [11/24]  eta: 0:00:06    time: 0.4719  data: 0.1480  max mem: 21320
+Testing:  [12/24]  eta: 0:00:05    time: 0.4571  data: 0.1366  max mem: 21320
+Testing:  [13/24]  eta: 0:00:04    time: 0.4516  data: 0.1343  max mem: 21320
+Testing:  [14/24]  eta: 0:00:04    time: 0.4407  data: 0.1254  max mem: 21320
+Testing:  [15/24]  eta: 0:00:03    time: 0.4313  data: 0.1183  max mem: 21320
+Testing:  [16/24]  eta: 0:00:03    time: 0.4226  data: 0.1114  max mem: 21320
+Testing:  [17/24]  eta: 0:00:02    time: 0.4145  data: 0.1052  max mem: 21320
+Testing:  [18/24]  eta: 0:00:02    time: 0.4072  data: 0.0996  max mem: 21320
+Testing:  [19/24]  eta: 0:00:02    time: 0.4009  data: 0.0947  max mem: 21320
+Testing:  [20/24]  eta: 0:00:01    time: 0.3296  data: 0.0257  max mem: 21320
+Testing:  [21/24]  eta: 0:00:01    time: 0.3291  data: 0.0257  max mem: 21320
+Testing:  [22/24]  eta: 0:00:00    time: 0.3280  data: 0.0257  max mem: 21320
+Testing:  [23/24]  eta: 0:00:00    time: 0.3174  data: 0.0257  max mem: 21320
+Testing: Total time: 0:00:09 (0.3779 s / it)
+CompletedProcess(args=['python', 'evaluation/eval_xy.py', '--scanpaths', '--ref_files', 'evaluation/testing_ground_truth.csv', '--pred_files', 'output/scanpath_prediction_population_rl/predicted_result.csv'], returncode=0, stdout='        DTW : (4.198136553907753, 1.1162724449177828)\n        TDE : (0.12368686998143742, 0.02890336886209109)\n eyenalysis : (0.03657289294534865, 0.017668387323330842)\n    frechet : (0.4590213411713156, 0.10853338450637298)\n  euclidean : (nan, nan)\n  hausdorff : (0.32427579556250463, 0.10081482431140479)\n recurrence : (1.7503258170833103, 1.8698126196938942)\ndeterminism : (4.035115491464543, 16.68971110446514)\n laminarity : (0.0, 0.0)\n       CORM : (23.384887730907874, 22.532701330583706)\nlevenshtein : (5.7111716621253406, 4.416153219025678)\n     mannan : (0.0297008757611008, 0.04149952935764793)\n', stderr='')
+Testing,   DTW: 4.1981,   TDE: 0.1237,   Eye: 0.0366
+/home/guoz3/.conda/envs/eye_tracking/lib/python3.6/site-packages/torch/nn/functional.py:1639: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+Train Epoch: [14]  [ 0/29]  eta: 0:08:43  lr: 0.000003  loss_rl: 0.0700  rewards: -0.0524  time: 18.0520  data: 3.5204  max mem: 21320
+Train Epoch: [14]  [ 5/29]  eta: 0:04:43  lr: 0.000003  loss_rl: -0.0093  rewards: 0.0090  time: 11.8321  data: 0.5869  max mem: 21320
+Train Epoch: [14]  [10/29]  eta: 0:03:31  lr: 0.000003  loss_rl: -0.0029  rewards: 0.0061  time: 11.1444  data: 0.3202  max mem: 21320
+Train Epoch: [14]  [15/29]  eta: 0:02:32  lr: 0.000003  loss_rl: 0.0471  rewards: -0.0355  time: 10.8983  data: 0.2202  max mem: 21320
+Train Epoch: [14]  [20/29]  eta: 0:01:36  lr: 0.000003  loss_rl: 0.0436  rewards: -0.0391  time: 10.4084  data: 0.0002  max mem: 21320
+Train Epoch: [14]  [25/29]  eta: 0:00:42  lr: 0.000003  loss_rl: 0.1011  rewards: -0.0873  time: 10.1799  data: 0.0002  max mem: 21320
+Train Epoch: [14]  [28/29]  eta: 0:00:10  lr: 0.000003  loss_rl: 0.0761  rewards: -0.0626  time: 10.0984  data: 0.0002  max mem: 21320
+Train Epoch: [14] Total time: 0:05:03 (10.4749 s / it)
+Averaged stats: lr: 0.0000  loss_rl: 0.0407  rewards: -0.0362
+Testing:  [ 0/24]  eta: 0:00:40    time: 1.6862  data: 1.4118  max mem: 21320
+Testing:  [ 1/24]  eta: 0:00:24    time: 1.0667  data: 0.7780  max mem: 21320
+Testing:  [ 2/24]  eta: 0:00:18    time: 0.8201  data: 0.5187  max mem: 21320
+Testing:  [ 3/24]  eta: 0:00:14    time: 0.6852  data: 0.3890  max mem: 21320
+Testing:  [ 4/24]  eta: 0:00:12    time: 0.6152  data: 0.3159  max mem: 21320
+Testing:  [ 5/24]  eta: 0:00:11    time: 0.5862  data: 0.2729  max mem: 21320
+Testing:  [ 6/24]  eta: 0:00:10    time: 0.5556  data: 0.2339  max mem: 21320
+Testing:  [ 7/24]  eta: 0:00:08    time: 0.5206  data: 0.2047  max mem: 21320
+Testing:  [ 8/24]  eta: 0:00:07    time: 0.4936  data: 0.1819  max mem: 21320
+Testing:  [ 9/24]  eta: 0:00:07    time: 0.4785  data: 0.1638  max mem: 21320
+Testing:  [10/24]  eta: 0:00:06    time: 0.4883  data: 0.1754  max mem: 21320
+Testing:  [11/24]  eta: 0:00:06    time: 0.4802  data: 0.1608  max mem: 21320
+Testing:  [12/24]  eta: 0:00:05    time: 0.4734  data: 0.1485  max mem: 21320
+Testing:  [13/24]  eta: 0:00:05    time: 0.4689  data: 0.1385  max mem: 21320
+Testing:  [14/24]  eta: 0:00:04    time: 0.4559  data: 0.1293  max mem: 21320
+Testing:  [15/24]  eta: 0:00:04    time: 0.4447  data: 0.1212  max mem: 21320
+Testing:  [16/24]  eta: 0:00:03    time: 0.4347  data: 0.1141  max mem: 21320
+Testing:  [17/24]  eta: 0:00:02    time: 0.4262  data: 0.1077  max mem: 21320
+Testing:  [18/24]  eta: 0:00:02    time: 0.4182  data: 0.1021  max mem: 21320
+Testing:  [19/24]  eta: 0:00:02    time: 0.4110  data: 0.0970  max mem: 21320
+Testing:  [20/24]  eta: 0:00:01    time: 0.3405  data: 0.0264  max mem: 21320
+Testing:  [21/24]  eta: 0:00:01    time: 0.3319  data: 0.0192  max mem: 21320
+Testing:  [22/24]  eta: 0:00:00    time: 0.3293  data: 0.0192  max mem: 21320
+Testing:  [23/24]  eta: 0:00:00    time: 0.3203  data: 0.0192  max mem: 21320
+Testing: Total time: 0:00:09 (0.3865 s / it)
+CompletedProcess(args=['python', 'evaluation/eval_xy.py', '--scanpaths', '--ref_files', 'evaluation/testing_ground_truth.csv', '--pred_files', 'output/scanpath_prediction_population_rl/predicted_result.csv'], returncode=0, stdout='        DTW : (4.206812281220017, 1.0879353893548982)\n        TDE : (0.12232112522023834, 0.027527581533537637)\n eyenalysis : (0.03637057987390943, 0.017783765446597856)\n    frechet : (0.45783776141007115, 0.10619445074765989)\n  euclidean : (nan, nan)\n  hausdorff : (0.3172756862199197, 0.09651456066905646)\n recurrence : (1.745456329924995, 1.7803685421277133)\ndeterminism : (3.7219409358619115, 16.019614470451156)\n laminarity : (0.0, 0.0)\n       CORM : (24.548680510547044, 22.859625029822546)\nlevenshtein : (5.7111716621253406, 4.416153219025678)\n     mannan : (0.029433688912268264, 0.043120854427163666)\n', stderr='')
+Testing,   DTW: 4.2068,   TDE: 0.1223,   Eye: 0.0364
+/home/guoz3/.conda/envs/eye_tracking/lib/python3.6/site-packages/torch/nn/functional.py:1639: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+Train Epoch: [15]  [ 0/29]  eta: 0:08:19  lr: 0.000002  loss_rl: -0.0039  rewards: -0.0087  time: 17.2225  data: 3.6938  max mem: 21320
+Train Epoch: [15]  [ 5/29]  eta: 0:04:50  lr: 0.000002  loss_rl: 0.0114  rewards: -0.0225  time: 12.1042  data: 0.6158  max mem: 21320
+Train Epoch: [15]  [10/29]  eta: 0:03:38  lr: 0.000002  loss_rl: 0.0355  rewards: -0.0347  time: 11.4861  data: 0.3360  max mem: 21320
+Train Epoch: [15]  [15/29]  eta: 0:02:36  lr: 0.000002  loss_rl: 0.1053  rewards: -0.1009  time: 11.1839  data: 0.2311  max mem: 21320
+Train Epoch: [15]  [20/29]  eta: 0:01:37  lr: 0.000002  loss_rl: 0.0049  rewards: 0.0023  time: 10.5525  data: 0.0002  max mem: 21320
+Train Epoch: [15]  [25/29]  eta: 0:00:42  lr: 0.000002  loss_rl: 0.0727  rewards: -0.0671  time: 10.1201  data: 0.0002  max mem: 21320
+Train Epoch: [15]  [28/29]  eta: 0:00:10  lr: 0.000002  loss_rl: -0.0360  rewards: 0.0407  time: 9.9341  data: 0.0002  max mem: 21320
+Train Epoch: [15] Total time: 0:05:03 (10.4806 s / it)
+Averaged stats: lr: 0.0000  loss_rl: 0.0480  rewards: -0.0436
+Testing:  [ 0/24]  eta: 0:00:42    time: 1.7831  data: 1.4521  max mem: 21320
+Testing:  [ 1/24]  eta: 0:00:23    time: 1.0288  data: 0.7261  max mem: 21320
+Testing:  [ 2/24]  eta: 0:00:17    time: 0.7795  data: 0.4841  max mem: 21320
+Testing:  [ 3/24]  eta: 0:00:13    time: 0.6534  data: 0.3631  max mem: 21320
+Testing:  [ 4/24]  eta: 0:00:15    time: 0.7586  data: 0.4682  max mem: 21320
+Testing:  [ 5/24]  eta: 0:00:12    time: 0.6790  data: 0.3902  max mem: 21320
+Testing:  [ 6/24]  eta: 0:00:11    time: 0.6224  data: 0.3344  max mem: 21320
+Testing:  [ 7/24]  eta: 0:00:09    time: 0.5846  data: 0.2926  max mem: 21320
+Testing:  [ 8/24]  eta: 0:00:09    time: 0.5634  data: 0.2601  max mem: 21320
+Testing:  [ 9/24]  eta: 0:00:08    time: 0.5387  data: 0.2341  max mem: 21320
+Testing:  [10/24]  eta: 0:00:07    time: 0.5148  data: 0.2129  max mem: 21320
+Testing:  [11/24]  eta: 0:00:06    time: 0.4967  data: 0.1951  max mem: 21320
+Testing:  [12/24]  eta: 0:00:05    time: 0.4827  data: 0.1832  max mem: 21320
+Testing:  [13/24]  eta: 0:00:05    time: 0.4681  data: 0.1702  max mem: 21320
+Testing:  [14/24]  eta: 0:00:04    time: 0.4553  data: 0.1588  max mem: 21320
+Testing:  [15/24]  eta: 0:00:04    time: 0.4476  data: 0.1489  max mem: 21320
+Testing:  [16/24]  eta: 0:00:03    time: 0.4445  data: 0.1456  max mem: 21320
+Testing:  [17/24]  eta: 0:00:03    time: 0.4351  data: 0.1375  max mem: 21320
+Testing:  [18/24]  eta: 0:00:02    time: 0.4268  data: 0.1303  max mem: 21320
+Testing:  [19/24]  eta: 0:00:02    time: 0.4193  data: 0.1237  max mem: 21320
+Testing:  [20/24]  eta: 0:00:01    time: 0.3439  data: 0.0511  max mem: 21320
+Testing:  [21/24]  eta: 0:00:01    time: 0.3439  data: 0.0511  max mem: 21320
+Testing:  [22/24]  eta: 0:00:00    time: 0.3437  data: 0.0511  max mem: 21320
+Testing:  [23/24]  eta: 0:00:00    time: 0.3350  data: 0.0511  max mem: 21320
+Testing: Total time: 0:00:09 (0.3933 s / it)
+CompletedProcess(args=['python', 'evaluation/eval_xy.py', '--scanpaths', '--ref_files', 'evaluation/testing_ground_truth.csv', '--pred_files', 'output/scanpath_prediction_population_rl/predicted_result.csv'], returncode=0, stdout='        DTW : (4.164559508230378, 1.1044978914083736)\n        TDE : (0.12215602922212182, 0.02787382130091016)\n eyenalysis : (0.03610799945048286, 0.017599359240167044)\n    frechet : (0.4559346022628331, 0.1093844942403305)\n  euclidean : (nan, nan)\n  hausdorff : (0.31560780762162893, 0.09879130532837599)\n recurrence : (1.7175089518413769, 1.80604059787653)\ndeterminism : (2.885363847137904, 13.785203181653465)\n laminarity : (0.0, 0.0)\n       CORM : (24.773578777588945, 22.839359577248377)\nlevenshtein : (5.7111716621253406, 4.416153219025678)\n     mannan : (0.028928623655669315, 0.040093664283300134)\n', stderr='')
+Testing,   DTW: 4.1646,   TDE: 0.1222,   Eye: 0.0361
+/home/guoz3/.conda/envs/eye_tracking/lib/python3.6/site-packages/torch/nn/functional.py:1639: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+Train Epoch: [16]  [ 0/29]  eta: 0:08:43  lr: 0.000002  loss_rl: 0.0490  rewards: -0.0559  time: 18.0613  data: 3.9657  max mem: 21320
+Train Epoch: [16]  [ 5/29]  eta: 0:04:42  lr: 0.000002  loss_rl: 0.0272  rewards: -0.0344  time: 11.7864  data: 0.6611  max mem: 21320
+Train Epoch: [16]  [10/29]  eta: 0:03:30  lr: 0.000002  loss_rl: 0.0549  rewards: -0.0552  time: 11.0780  data: 0.3607  max mem: 21320
+Train Epoch: [16]  [15/29]  eta: 0:02:36  lr: 0.000002  loss_rl: 0.0169  rewards: -0.0144  time: 11.2135  data: 0.2480  max mem: 21320
+Train Epoch: [16]  [20/29]  eta: 0:01:39  lr: 0.000002  loss_rl: 0.1081  rewards: -0.0889  time: 10.6874  data: 0.0002  max mem: 21320
+Train Epoch: [16]  [25/29]  eta: 0:00:43  lr: 0.000002  loss_rl: -0.0236  rewards: 0.0064  time: 10.5364  data: 0.0002  max mem: 21320
+Train Epoch: [16]  [28/29]  eta: 0:00:10  lr: 0.000002  loss_rl: 0.1724  rewards: -0.1520  time: 10.4993  data: 0.0002  max mem: 21320
+Train Epoch: [16] Total time: 0:05:10 (10.7059 s / it)
+Averaged stats: lr: 0.0000  loss_rl: 0.0597  rewards: -0.0550
+Testing:  [ 0/24]  eta: 0:00:41    time: 1.7477  data: 1.4432  max mem: 21320
+Testing:  [ 1/24]  eta: 0:00:23    time: 1.0118  data: 0.7217  max mem: 21320
+Testing:  [ 2/24]  eta: 0:00:16    time: 0.7663  data: 0.4811  max mem: 21320
+Testing:  [ 3/24]  eta: 0:00:13    time: 0.6461  data: 0.3609  max mem: 21320
+Testing:  [ 4/24]  eta: 0:00:14    time: 0.7055  data: 0.4212  max mem: 21320
+Testing:  [ 5/24]  eta: 0:00:12    time: 0.6366  data: 0.3510  max mem: 21320
+Testing:  [ 6/24]  eta: 0:00:10    time: 0.5907  data: 0.3008  max mem: 21320
+Testing:  [ 7/24]  eta: 0:00:09    time: 0.5518  data: 0.2632  max mem: 21320
+Testing:  [ 8/24]  eta: 0:00:08    time: 0.5272  data: 0.2402  max mem: 21320
+Testing:  [ 9/24]  eta: 0:00:07    time: 0.5020  data: 0.2162  max mem: 21320
+Testing:  [10/24]  eta: 0:00:06    time: 0.4815  data: 0.1966  max mem: 21320
+Testing:  [11/24]  eta: 0:00:06    time: 0.4644  data: 0.1802  max mem: 21320
+Testing:  [12/24]  eta: 0:00:05    time: 0.4677  data: 0.1777  max mem: 21320
+Testing:  [13/24]  eta: 0:00:04    time: 0.4539  data: 0.1650  max mem: 21320
+Testing:  [14/24]  eta: 0:00:04    time: 0.4420  data: 0.1541  max mem: 21320
+Testing:  [15/24]  eta: 0:00:03    time: 0.4317  data: 0.1444  max mem: 21320
+Testing:  [16/24]  eta: 0:00:03    time: 0.4228  data: 0.1359  max mem: 21320
+Testing:  [17/24]  eta: 0:00:02    time: 0.4163  data: 0.1284  max mem: 21320
+Testing:  [18/24]  eta: 0:00:02    time: 0.4092  data: 0.1216  max mem: 21320
+Testing:  [19/24]  eta: 0:00:02    time: 0.4069  data: 0.1198  max mem: 21320
+Testing:  [20/24]  eta: 0:00:01    time: 0.3337  data: 0.0476  max mem: 21320
+Testing:  [21/24]  eta: 0:00:01    time: 0.3338  data: 0.0476  max mem: 21320
+Testing:  [22/24]  eta: 0:00:00    time: 0.3339  data: 0.0476  max mem: 21320
+Testing:  [23/24]  eta: 0:00:00    time: 0.3254  data: 0.0476  max mem: 21320
+Testing: Total time: 0:00:09 (0.3839 s / it)
+CompletedProcess(args=['python', 'evaluation/eval_xy.py', '--scanpaths', '--ref_files', 'evaluation/testing_ground_truth.csv', '--pred_files', 'output/scanpath_prediction_population_rl/predicted_result.csv'], returncode=0, stdout='        DTW : (4.188376849907887, 1.0548450677396453)\n        TDE : (0.12136512117259826, 0.026710694554659957)\n eyenalysis : (0.03607934219982598, 0.0179903637448979)\n    frechet : (0.4533417361922522, 0.10226774417123205)\n  euclidean : (nan, nan)\n  hausdorff : (0.31492455647060913, 0.09374686161108911)\n recurrence : (1.8174899578169335, 1.752180432423911)\ndeterminism : (3.859640436470623, 15.709295001724884)\n laminarity : (0.0, 0.0)\n       CORM : (25.755133671645005, 22.58745791416034)\nlevenshtein : (5.7111716621253406, 4.416153219025678)\n     mannan : (0.029337287286222428, 0.04604871259471153)\n', stderr='')
+Testing,   DTW: 4.1884,   TDE: 0.1214,   Eye: 0.0361
+/home/guoz3/.conda/envs/eye_tracking/lib/python3.6/site-packages/torch/nn/functional.py:1639: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+Train Epoch: [17]  [ 0/29]  eta: 0:09:19  lr: 0.000001  loss_rl: -0.0113  rewards: 0.0241  time: 19.2931  data: 3.5643  max mem: 21320
+Train Epoch: [17]  [ 5/29]  eta: 0:04:41  lr: 0.000001  loss_rl: 0.0958  rewards: -0.0894  time: 11.7282  data: 0.5942  max mem: 21320
+Train Epoch: [17]  [10/29]  eta: 0:03:28  lr: 0.000001  loss_rl: 0.0062  rewards: -0.0048  time: 10.9672  data: 0.3242  max mem: 21320
+Train Epoch: [17]  [15/29]  eta: 0:02:32  lr: 0.000001  loss_rl: 0.0833  rewards: -0.0808  time: 10.9169  data: 0.2229  max mem: 21320
+Train Epoch: [17]  [20/29]  eta: 0:01:39  lr: 0.000001  loss_rl: 0.1153  rewards: -0.1034  time: 10.6400  data: 0.0002  max mem: 21320
+Train Epoch: [17]  [25/29]  eta: 0:00:43  lr: 0.000001  loss_rl: 0.0554  rewards: -0.0584  time: 10.6113  data: 0.0002  max mem: 21320
+Train Epoch: [17]  [28/29]  eta: 0:00:10  lr: 0.000001  loss_rl: 0.1300  rewards: -0.1142  time: 10.6212  data: 0.0002  max mem: 21320
+Train Epoch: [17] Total time: 0:05:12 (10.7689 s / it)
+Averaged stats: lr: 0.0000  loss_rl: 0.0553  rewards: -0.0506
+Testing:  [ 0/24]  eta: 0:00:42    time: 1.7540  data: 1.4620  max mem: 21320
+Testing:  [ 1/24]  eta: 0:00:23    time: 1.0139  data: 0.7310  max mem: 21320
+Testing:  [ 2/24]  eta: 0:00:16    time: 0.7676  data: 0.4874  max mem: 21320
+Testing:  [ 3/24]  eta: 0:00:13    time: 0.6441  data: 0.3655  max mem: 21320
+Testing:  [ 4/24]  eta: 0:00:12    time: 0.6287  data: 0.3506  max mem: 21320
+Testing:  [ 5/24]  eta: 0:00:10    time: 0.5698  data: 0.2922  max mem: 21320
+Testing:  [ 6/24]  eta: 0:00:09    time: 0.5297  data: 0.2504  max mem: 21320
+Testing:  [ 7/24]  eta: 0:00:08    time: 0.4982  data: 0.2191  max mem: 21320
+Testing:  [ 8/24]  eta: 0:00:08    time: 0.5353  data: 0.2461  max mem: 21320
+Testing:  [ 9/24]  eta: 0:00:07    time: 0.5110  data: 0.2215  max mem: 21320
+Testing:  [10/24]  eta: 0:00:06    time: 0.4896  data: 0.2014  max mem: 21320
+Testing:  [11/24]  eta: 0:00:06    time: 0.4719  data: 0.1846  max mem: 21320
+Testing:  [12/24]  eta: 0:00:05    time: 0.4778  data: 0.1897  max mem: 21320
+Testing:  [13/24]  eta: 0:00:05    time: 0.4637  data: 0.1762  max mem: 21320
+Testing:  [14/24]  eta: 0:00:04    time: 0.4529  data: 0.1644  max mem: 21320
+Testing:  [15/24]  eta: 0:00:04    time: 0.4471  data: 0.1542  max mem: 21320
+Testing:  [16/24]  eta: 0:00:03    time: 0.4409  data: 0.1473  max mem: 21320
+Testing:  [17/24]  eta: 0:00:03    time: 0.4319  data: 0.1391  max mem: 21320
+Testing:  [18/24]  eta: 0:00:02    time: 0.4247  data: 0.1318  max mem: 21320
+Testing:  [19/24]  eta: 0:00:02    time: 0.4173  data: 0.1252  max mem: 21320
+Testing:  [20/24]  eta: 0:00:01    time: 0.3435  data: 0.0521  max mem: 21320
+Testing:  [21/24]  eta: 0:00:01    time: 0.3438  data: 0.0521  max mem: 21320
+Testing:  [22/24]  eta: 0:00:00    time: 0.3441  data: 0.0521  max mem: 21320
+Testing:  [23/24]  eta: 0:00:00    time: 0.3363  data: 0.0521  max mem: 21320
+Testing: Total time: 0:00:09 (0.3932 s / it)
+CompletedProcess(args=['python', 'evaluation/eval_xy.py', '--scanpaths', '--ref_files', 'evaluation/testing_ground_truth.csv', '--pred_files', 'output/scanpath_prediction_population_rl/predicted_result.csv'], returncode=0, stdout='        DTW : (4.201754564780226, 1.052735903865417)\n        TDE : (0.12171450802237972, 0.026890084156647)\n eyenalysis : (0.036325078159103366, 0.018103772618540886)\n    frechet : (0.4540508439545038, 0.10174233828864579)\n  euclidean : (nan, nan)\n  hausdorff : (0.31729215041994296, 0.0945368421908536)\n recurrence : (1.7898624233774099, 1.7928589223968716)\ndeterminism : (3.968253811214625, 16.4554274147171)\n laminarity : (0.0, 0.0)\n       CORM : (25.332426469737268, 22.86251960214922)\nlevenshtein : (5.7111716621253406, 4.416153219025678)\n     mannan : (0.0297789908634223, 0.04713092381784275)\n', stderr='')
+Testing,   DTW: 4.2018,   TDE: 0.1217,   Eye: 0.0363
+/home/guoz3/.conda/envs/eye_tracking/lib/python3.6/site-packages/torch/nn/functional.py:1639: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+Train Epoch: [18]  [ 0/29]  eta: 0:08:34  lr: 0.000001  loss_rl: 0.0440  rewards: -0.0445  time: 17.7489  data: 3.9005  max mem: 21320
+Train Epoch: [18]  [ 5/29]  eta: 0:04:44  lr: 0.000001  loss_rl: 0.0637  rewards: -0.0626  time: 11.8683  data: 0.6502  max mem: 21320
+Train Epoch: [18]  [10/29]  eta: 0:03:39  lr: 0.000001  loss_rl: 0.0549  rewards: -0.0668  time: 11.5591  data: 0.3548  max mem: 21320
+Train Epoch: [18]  [15/29]  eta: 0:02:38  lr: 0.000001  loss_rl: 0.0563  rewards: -0.0445  time: 11.2938  data: 0.2440  max mem: 21320
+Train Epoch: [18]  [20/29]  eta: 0:01:41  lr: 0.000001  loss_rl: 0.0579  rewards: -0.0583  time: 10.9863  data: 0.0002  max mem: 21320
+Train Epoch: [18]  [25/29]  eta: 0:00:44  lr: 0.000001  loss_rl: 0.0133  rewards: -0.0057  time: 10.8453  data: 0.0002  max mem: 21320
+Train Epoch: [18]  [28/29]  eta: 0:00:10  lr: 0.000001  loss_rl: 0.1160  rewards: -0.0999  time: 10.7279  data: 0.0002  max mem: 21320
+Train Epoch: [18] Total time: 0:05:18 (10.9846 s / it)
+Averaged stats: lr: 0.0000  loss_rl: 0.0563  rewards: -0.0502
+Testing:  [ 0/24]  eta: 0:00:42    time: 1.7730  data: 1.4750  max mem: 21320
+Testing:  [ 1/24]  eta: 0:00:23    time: 1.0256  data: 0.7376  max mem: 21320
+Testing:  [ 2/24]  eta: 0:00:17    time: 0.7766  data: 0.4917  max mem: 21320
+Testing:  [ 3/24]  eta: 0:00:13    time: 0.6573  data: 0.3688  max mem: 21320
+Testing:  [ 4/24]  eta: 0:00:14    time: 0.7424  data: 0.4456  max mem: 21320
+Testing:  [ 5/24]  eta: 0:00:12    time: 0.6726  data: 0.3713  max mem: 21320
+Testing:  [ 6/24]  eta: 0:00:11    time: 0.6298  data: 0.3183  max mem: 21320
+Testing:  [ 7/24]  eta: 0:00:10    time: 0.5960  data: 0.2785  max mem: 21320
+Testing:  [ 8/24]  eta: 0:00:09    time: 0.5743  data: 0.2512  max mem: 21320
+Testing:  [ 9/24]  eta: 0:00:08    time: 0.5443  data: 0.2261  max mem: 21320
+Testing:  [10/24]  eta: 0:00:07    time: 0.5200  data: 0.2055  max mem: 21320
+Testing:  [11/24]  eta: 0:00:06    time: 0.4996  data: 0.1884  max mem: 21320
+Testing:  [12/24]  eta: 0:00:05    time: 0.4994  data: 0.1832  max mem: 21320
+Testing:  [13/24]  eta: 0:00:05    time: 0.4901  data: 0.1701  max mem: 21320
+Testing:  [14/24]  eta: 0:00:04    time: 0.4800  data: 0.1588  max mem: 21320
+Testing:  [15/24]  eta: 0:00:04    time: 0.4679  data: 0.1488  max mem: 21320
+Testing:  [16/24]  eta: 0:00:03    time: 0.4567  data: 0.1401  max mem: 21320
+Testing:  [17/24]  eta: 0:00:03    time: 0.4467  data: 0.1323  max mem: 21320
+Testing:  [18/24]  eta: 0:00:02    time: 0.4376  data: 0.1253  max mem: 21320
+Testing:  [19/24]  eta: 0:00:02    time: 0.4295  data: 0.1191  max mem: 21320
+Testing:  [20/24]  eta: 0:00:01    time: 0.3546  data: 0.0453  max mem: 21320
+Testing:  [21/24]  eta: 0:00:01    time: 0.3544  data: 0.0453  max mem: 21320
+Testing:  [22/24]  eta: 0:00:00    time: 0.3542  data: 0.0453  max mem: 21320
+Testing:  [23/24]  eta: 0:00:00    time: 0.3442  data: 0.0453  max mem: 21320
+Testing: Total time: 0:00:09 (0.4012 s / it)
+CompletedProcess(args=['python', 'evaluation/eval_xy.py', '--scanpaths', '--ref_files', 'evaluation/testing_ground_truth.csv', '--pred_files', 'output/scanpath_prediction_population_rl/predicted_result.csv'], returncode=0, stdout='        DTW : (4.171136238198582, 1.0563286508043084)\n        TDE : (0.12162245198110648, 0.026991447926443347)\n eyenalysis : (0.03606139138276981, 0.01775454727452304)\n    frechet : (0.45414783209109727, 0.10308228293837746)\n  euclidean : (nan, nan)\n  hausdorff : (0.3148192691600951, 0.095307270041859)\n recurrence : (1.8288084909338318, 1.7836777676182358)\ndeterminism : (3.329116250970457, 15.187083391751823)\n laminarity : (0.0, 0.0)\n       CORM : (25.464744610963784, 22.77976720694597)\nlevenshtein : (5.7111716621253406, 4.416153219025678)\n     mannan : (0.029072480137146087, 0.0435327260763763)\n', stderr='')
+Testing,   DTW: 4.1711,   TDE: 0.1216,   Eye: 0.0361
+/home/guoz3/.conda/envs/eye_tracking/lib/python3.6/site-packages/torch/nn/functional.py:1639: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+Train Epoch: [19]  [ 0/29]  eta: 0:08:43  lr: 0.000001  loss_rl: 0.0914  rewards: -0.0745  time: 18.0366  data: 4.2291  max mem: 21320
+Train Epoch: [19]  [ 5/29]  eta: 0:04:58  lr: 0.000001  loss_rl: 0.0396  rewards: -0.0504  time: 12.4228  data: 0.7050  max mem: 21320
+Train Epoch: [19]  [10/29]  eta: 0:03:54  lr: 0.000001  loss_rl: 0.1090  rewards: -0.0910  time: 12.3631  data: 0.3846  max mem: 21320
+Train Epoch: [19]  [15/29]  eta: 0:02:54  lr: 0.000001  loss_rl: 0.1238  rewards: -0.1153  time: 12.4546  data: 0.2645  max mem: 21320
+Train Epoch: [19]  [20/29]  eta: 0:01:51  lr: 0.000001  loss_rl: 0.0811  rewards: -0.0699  time: 12.0949  data: 0.0002  max mem: 21320
+Train Epoch: [19]  [25/29]  eta: 0:00:47  lr: 0.000001  loss_rl: 0.1151  rewards: -0.1073  time: 11.7023  data: 0.0002  max mem: 21320
+Train Epoch: [19]  [28/29]  eta: 0:00:11  lr: 0.000001  loss_rl: 0.0152  rewards: -0.0122  time: 11.5037  data: 0.0002  max mem: 21320
+Train Epoch: [19] Total time: 0:05:40 (11.7276 s / it)
+Averaged stats: lr: 0.0000  loss_rl: 0.0529  rewards: -0.0474
+Testing:  [ 0/24]  eta: 0:00:39    time: 1.6663  data: 1.3873  max mem: 21320
+Testing:  [ 1/24]  eta: 0:00:24    time: 1.0594  data: 0.7170  max mem: 21320
+Testing:  [ 2/24]  eta: 0:00:18    time: 0.8195  data: 0.4797  max mem: 21320
+Testing:  [ 3/24]  eta: 0:00:14    time: 0.7110  data: 0.3598  max mem: 21320
+Testing:  [ 4/24]  eta: 0:00:12    time: 0.6328  data: 0.2966  max mem: 21320
+Testing:  [ 5/24]  eta: 0:00:10    time: 0.5733  data: 0.2472  max mem: 21320
+Testing:  [ 6/24]  eta: 0:00:09    time: 0.5309  data: 0.2119  max mem: 21320
+Testing:  [ 7/24]  eta: 0:00:08    time: 0.4989  data: 0.1854  max mem: 21320
+Testing:  [ 8/24]  eta: 0:00:07    time: 0.4765  data: 0.1671  max mem: 21320
+Testing:  [ 9/24]  eta: 0:00:06    time: 0.4566  data: 0.1504  max mem: 21320
+Testing:  [10/24]  eta: 0:00:06    time: 0.4400  data: 0.1368  max mem: 21320
+Testing:  [11/24]  eta: 0:00:05    time: 0.4263  data: 0.1254  max mem: 21320
+Testing:  [12/24]  eta: 0:00:05    time: 0.4427  data: 0.1434  max mem: 21320
+Testing:  [13/24]  eta: 0:00:04    time: 0.4309  data: 0.1331  max mem: 21320
+Testing:  [14/24]  eta: 0:00:04    time: 0.4206  data: 0.1243  max mem: 21320
+Testing:  [15/24]  eta: 0:00:03    time: 0.4146  data: 0.1165  max mem: 21320
+Testing:  [16/24]  eta: 0:00:03    time: 0.4126  data: 0.1097  max mem: 21320
+Testing:  [17/24]  eta: 0:00:02    time: 0.4053  data: 0.1036  max mem: 21320
+Testing:  [18/24]  eta: 0:00:02    time: 0.3987  data: 0.0981  max mem: 21320
+Testing:  [19/24]  eta: 0:00:02    time: 0.4046  data: 0.1053  max mem: 21320
+Testing:  [20/24]  eta: 0:00:01    time: 0.3352  data: 0.0359  max mem: 21320
+Testing:  [21/24]  eta: 0:00:01    time: 0.3263  data: 0.0336  max mem: 21320
+Testing:  [22/24]  eta: 0:00:00    time: 0.3230  data: 0.0333  max mem: 21320
+Testing:  [23/24]  eta: 0:00:00    time: 0.3089  data: 0.0333  max mem: 21320
+Testing: Total time: 0:00:09 (0.3810 s / it)
+CompletedProcess(args=['python', 'evaluation/eval_xy.py', '--scanpaths', '--ref_files', 'evaluation/testing_ground_truth.csv', '--pred_files', 'output/scanpath_prediction_population_rl/predicted_result.csv'], returncode=0, stdout='        DTW : (4.170076705179308, 1.061166799443123)\n        TDE : (0.12186552143207312, 0.027274413830905442)\n eyenalysis : (0.03600002679597046, 0.017667980771653095)\n    frechet : (0.4538164885588659, 0.10333288006526731)\n  euclidean : (nan, nan)\n  hausdorff : (0.31553312802452566, 0.09633410676025392)\n recurrence : (1.8551180880881153, 1.8140216375906002)\ndeterminism : (3.279486049327311, 15.024432715196893)\n laminarity : (0.0, 0.0)\n       CORM : (25.55061799323728, 22.89437861980454)\nlevenshtein : (5.7111716621253406, 4.416153219025678)\n     mannan : (0.028944335723992236, 0.04305667615812347)\n', stderr='')
+Testing,   DTW: 4.1701,   TDE: 0.1219,   Eye: 0.0360
+Training time 2:03:59
+DeprecationWarning: 'source deactivate' is deprecated. Use 'conda deactivate'.
