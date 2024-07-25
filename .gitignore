@@ -1,0 +1,7 @@
+__pycache__/
+weights/
+*.DS
+*.png
+*.jpg
+output/
+
