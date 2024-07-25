@@ -1,5 +1,7 @@
 # EyeFormer: Predicting Scanpaths in Free-Viewing Tasks with Transformer-Guided Reinforcement Learning
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1GK9a48QS0ajZnFeYtDKY_3dAgv-kukhN?usp=sharing)
+
 The implementation of the model in the submission **EyeFormer: Predicting Scanpaths in Free-Viewing Tasks with Transformer-Guided Reinforcement Learning**. 
 
 ## Requirement
