@@ -3,7 +3,7 @@ from torch.utils.data import DataLoader
 from torchvision import transforms
 from PIL import Image
 
-from dataset.coord_dataset import tracking_dataset_pretrain, tracking_dataset, tracking_dataset_eval
+from dataset.coord_dataset import tracking_dataset_pretrain, tracking_dataset, tracking_dataset_eval, tracking_dataset_infer
 
 from dataset.randaugment import RandomAugment
 
@@ -23,15 +23,23 @@ def create_dataset(dataset, config):
 
     if dataset == 'pretrain':
         dataset = tracking_dataset_pretrain(config['train_file'], config['image_root'], tracking_transform, max_words=config["max_words"])
-        return dataset
+        
 
     elif dataset == 'tracking':
-        dataset = tracking_dataset(config['train_file'], config['image_root'], tracking_transform, saliency_transform, max_words=config["max_words"])
-        return dataset
+        dataset = tracking_dataset(config['train_file'], 
+                                   config['image_root'], 
+                                   tracking_transform, 
+                                   saliency_transform, 
+                                   max_words=config["max_words"])
+        
 
     elif dataset == 'eval_tracking':
         dataset = tracking_dataset_eval(config['train_file'], config['eval_image_root'], tracking_transform, max_words=config["max_words"])
-        return dataset
+    
+    elif dataset == 'inference':
+        dataset = tracking_dataset_infer(config['eval_image_root'], tracking_transform, max_words=config["max_words"])
+    
+    return dataset
 
 
 def create_sampler(datasets, shuffles, num_tasks, global_rank):

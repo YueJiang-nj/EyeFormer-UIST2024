@@ -143,14 +143,14 @@ def reconstruct_data(data):
 
 
 class tracking_dataset_pretrain(Dataset):
-    def __init__(self, ann_file, image_root, transform, max_words=15):
+    def __init__(self, ann_file, image_root, transform, max_words=15, isTrain=True):
 
         image_dir = [os.path.join(image_root, r) for r in os.listdir(image_root)]
         blk_names = [d.split(" ")[-1] for d in image_dir]
         blk_names = ["0"*(2-len(bn))+bn for bn in blk_names]
         self.blk_names = blk_names
 
-        data = load_ann_file(ann_file, blk_names, train=True)
+        data = load_ann_file(ann_file, blk_names, train=isTrain)
 
         ### In population level prediction, user2id is not used
         user2id = json.load(open("user2id.json", "r"))
@@ -315,4 +315,46 @@ class tracking_dataset_eval(Dataset):
 
         return image, ann["image_name"], width, height, user_id
 
+
+class tracking_dataset_infer(Dataset):
+    def __init__(self, image_root, transform, max_words=15):
+        self.image_list = [os.path.join(image_root, r) for r in os.listdir(image_root)\
+                           if (os.path.isfile(os.path.join(image_root, r)) and (r.endswith(".png") or r.endswith(".jpg")))]
+        self.image_names = [r.split("/")[-1] for r in self.image_list]
+        # blk_names = [d.split(" ")[-1] for d in image_dir]
+        # blk_names = ["0"*(2-len(bn))+bn for bn in blk_names]
+        # self.blk_names = blk_names
+
+        # data = load_ann_file(ann_file, blk_names, train=False)
+
+        # user2id = json.load(open("user2id.json", "r"))
+        # id2user = {v:k for k, v in user2id.items()}
+
+        # self.data = data
+        self.transform = transform
+        self.max_words = max_words
+        self.image_root = image_root
+        # self.user2id = user2id
+        # self.id2user = id2user
+
+
+    def __len__(self):
+        return len(self.image_list)
+
+
+    def __getitem__(self, index):
+
+        # ann = self.data[index]
+        # user_id = self.user2id[ann["user_name"]]
+
+        image_path = self.image_list[index]
+        image_name = self.image_names[index]
+
+        image = Image.open(image_path).convert('RGB')
+        width = image.size[0]
+        height = image.size[1]
+
+        image = self.transform(image)
+
+        return image, image_name, width, height
 
