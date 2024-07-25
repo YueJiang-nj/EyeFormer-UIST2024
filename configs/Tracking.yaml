@@ -1,6 +1,6 @@
 train_file:  '/scratch/work/guoz3/EyeTracking/data/full/new_logs'
-image_root: '/scratch/work/guoz3/EyeTracking/data/full/dataset/train'
-eval_image_root: '/scratch/work/guoz3/EyeTracking/data/full/dataset/test'
+image_root: '/home/researcher/Documents/saliency_modeling_issues/UEyes_dataset/images'
+eval_image_root: '/home/researcher/Documents/saliency_modeling_issues/UEyes_dataset/images'
 
 bert_config: 'configs/config_bert.json'
 
