@@ -16,6 +16,7 @@ pip install opencv-python
 pip install --upgrade Pillow
 pip install einops
 pip install multimatch-gaze
+pip install multimatch
 ```
 
 The requirement is also uploaded as `requirements.txt`. Please use this file to make sure that some of the packages you have installed are the same. Please **don't** configure your environment with this file.
