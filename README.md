@@ -107,6 +107,8 @@ Specifically:
 - `self.dense2` predicts the log standard deviation
 - A Gaussian distribution is constructed and sampled from
 
+Replace [`model_tracking.py#L142`](https://github.com/YueJiang-nj/EyeFormer-UIST2024/blob/95fd30fcfe2e12059c1e9b20a73937739726c3f1/models/model_tracking.py#L142) with the following lines:
+
 ```python
 pred = self.dense(coord_output.last_hidden_state[:, -1:])
 logstd = self.dense2(coord_output.last_hidden_state[:, -1:])
