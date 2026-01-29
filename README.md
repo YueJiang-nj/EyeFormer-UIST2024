@@ -90,6 +90,31 @@ eval_tracking.py \
 
 The predicted results `predicted_result.csv` will be saved in `output/scanpath_prediction_population_rl`. To reproduce our results, you could use the checkpoint from the 19th epoch.
 
+## Sample from Gaussian distribution
+
+Currently, the model uses the mean of a Gaussian distribution as the prediction output.
+The implementation can be found here:
+- [`model_tracking.py#L142`](https://github.com/YueJiang-nj/EyeFormer-UIST2024/blob/95fd30fcfe2e12059c1e9b20a73937739726c3f1/models/model_tracking.py#L142)
+
+```python
+pred = self.dense(coord_output.last_hidden_state[:, -1:])
+```
+
+To sample from a Gaussian distribution, both the mean and standard deviation need to be estimated by the model.
+
+Specifically:
+- `self.dense` predicts the mean
+- `self.dense2` predicts the log standard deviation
+- A Gaussian distribution is constructed and sampled from
+
+```python
+pred = self.dense(coord_output.last_hidden_state[:, -1:])
+logstd = self.dense2(coord_output.last_hidden_state[:, -1:])
+pred_var = torch.exp(logstd)
+pred_dist = torch.distributions.Normal(pred, pred_var)
+pred = pred_dist.sample()
+```
+
 ## Evaluation
 
 We have already preprocessed the testing fixation points in `evaluation/testing_ground_truth.csv`. You can check it and compare it with the raw data.
